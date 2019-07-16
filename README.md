@@ -1,4 +1,4 @@
-# SMS
+# School Management System
 
 WARNING : DO NOT COMMIT OR PUSH ANYTHING UNLESS TOLD TO DO SO
 
