@@ -1,4 +1,5 @@
-﻿using System.Web.Mvc;
+﻿using SMS2.Models;
+using System.Web.Mvc;
 using System.Web.Security;
 using WebMatrix.WebData;
 
@@ -16,7 +17,7 @@ namespace MvcMembershipApp.Controllers
 
         // GET: /Account/
 
-
+        SMS sms = new SMS();
 
         public ActionResult Index()
 
@@ -104,11 +105,22 @@ namespace MvcMembershipApp.Controllers
 
             }
 
-            string username = "mohammadaashir9@gmail.com";
+            string username = "daniyalsafdar9@gmail.com";
             string password = "123456";
+
+            Faculty faculty = new Faculty();
+            faculty.fac_Name = "Daniyal Safdar";
+            faculty.fac_CNIC = "44206-1285380-5";
+            faculty.fac_phoneNo = "030013231231";
+            faculty.fac_Salary = 100000;
+            
 
             WebSecurity.CreateUserAndAccount(username, password);
             Roles.AddUserToRole(username, "Faculty");
+            faculty.user_ID = WebSecurity.GetUserId(username);
+
+            sms.Faculties.Add(faculty);
+            sms.SaveChanges();
             
             return RedirectToAction("Index", "Home");
 

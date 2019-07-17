@@ -11,6 +11,7 @@ namespace SMS2.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public User()
         {
+            Faculties = new HashSet<Faculty>();
             webpages_Roles = new HashSet<webpages_Roles>();
         }
 
@@ -19,6 +20,9 @@ namespace SMS2.Models
         [Required]
         [StringLength(56)]
         public string UserName { get; set; }
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Faculty> Faculties { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<webpages_Roles> webpages_Roles { get; set; }

@@ -166,7 +166,14 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Attendance.cs" />
+    <Compile Include="Models\Class.cs" />
+    <Compile Include="Models\Faculty.cs" />
     <Compile Include="Models\Model1.cs" />
+    <Compile Include="Models\SMS.cs" />
+    <Compile Include="Models\Student.cs" />
+    <Compile Include="Models\StudentResult.cs" />
+    <Compile Include="Models\Subject.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Models\webpages_Membership.cs" />
     <Compile Include="Models\webpages_OAuthMembership.cs" />
