@@ -162,6 +162,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\AttendanceController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\StudentResultController.cs" />
     <Compile Include="Global.asax.cs">
@@ -180,6 +181,7 @@
     <Compile Include="Models\webpages_Roles.cs" />
     <Compile Include="ModelView\StudentStudentResultViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModel\AttendanceModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-theme.css" />
@@ -7362,6 +7364,7 @@
     <Content Include="Theme\AdminLTE-2.4.13\README.md" />
     <Content Include="Theme\AdminLTE-2.4.13\yarn.lock" />
     <Content Include="Views\Account\Login.cshtml" />
+    <Content Include="Views\Attendance\MarkAttendance.cshtml" />
     <Content Include="Views\StudentResult\AddResult.cshtml" />
     <Content Include="Views\StudentResult\addResultInside.cshtml" />
     <Content Include="Views\StudentResult\viewResult.cshtml" />
