@@ -19,6 +19,23 @@ namespace SMS2.Controllers
             ViewBag.studentResultsClass = "treeview";
             ViewBag.viewResultClass = "";
             ViewBag.addResultClass = "";
+            ViewBag.attendenceClass = "treeview";
+            ViewBag.markAttendenceClass = "";
+
+
+            return View();
+        }
+
+        public ActionResult IndexStudent()
+        {
+
+            //ViewBag.dashboardClass = "active";
+            //ViewBag.studentResultsClass = "treeview";
+            //ViewBag.viewResultClass = "";
+            //ViewBag.addResultClass = "";
+            //ViewBag.attendenceClass = "treeview";
+            //ViewBag.markAttendenceClass = "";
+
 
             return View();
         }

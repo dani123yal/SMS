@@ -56,7 +56,7 @@ namespace MvcMembershipApp.Controllers
         public ActionResult Login(FormCollection Form)
 
         {
-
+            WebSecurity.Logout();
             bool Authenticated = WebSecurity.Login(Form["UserName"], Form["Password"], false);
 
             string username = Form["UserName"];
@@ -71,7 +71,12 @@ namespace MvcMembershipApp.Controllers
 
                 {
 
+                    if(Roles.GetRolesForUser(WebSecurity.CurrentUserName)[0].Contains("Faculty"))
                     Response.Redirect("/Home/Index");
+                    else
+                    {
+                        Response.Redirect("/Home/IndexStudent");
+                    }
 
                 }
 

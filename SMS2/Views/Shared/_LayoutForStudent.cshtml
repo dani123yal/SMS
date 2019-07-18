@@ -336,8 +336,8 @@
                 <!-- sidebar menu: : style can be found in sidebar.less -->
                 <ul class="sidebar-menu" data-widget="tree">
                     <li class="header">MAIN NAVIGATION</li>
-                    
-                    
+
+
                     <li class="@ViewBag.dashboardClass">
                         <a href="~/Home/Index">
                             <i class="fa fa-dashboard"></i> <span>Dashboard</span>
@@ -347,35 +347,19 @@
                         </a>
                     </li>
 
-                    <li class="@ViewBag.attendenceClass">
-                        <a href="#">
-                            <i class="fa fa-pencil-square-o"></i> <span>Attendance</span>
+
+                    <li class="@ViewBag.resultClass">
+                        <a href="/StudentResultStudent/viewresult">
+                            <i class="fa fa-pie-chart"></i> <span>Results</span>
                             <span class="pull-right-container">
-                                <i class="fa fa-angle-left pull-right"></i>
+
                             </span>
                         </a>
-                        <ul class="treeview-menu">
-                            <li class="@ViewBag.markAttendenceClass"><a href="~/Attendance/MarkAttendance"><i class="fa fa-circle-o"></i> Mark Attendance</a></li>
-                            <li><a href="~/Attendance/ViewAttendance"><i class="fa fa-circle-o"></i> View Attendance</a></li>
-                        </ul>
                     </li>
-                    
-                    
-                    <li class="@ViewBag.studentResultsClass">
-                        <a href="#">
-                            <i class="fa fa-pie-chart"></i> <span>Student Results</span>
-                            <span class="pull-right-container">
-                                <i class="fa fa-angle-left pull-right"></i>
-                            </span>
-                        </a>
-                        <ul class="treeview-menu">
-                            <li class="@ViewBag.addResultClass"><a href="/studentresult/addresult"><i class="fa fa-circle-o"></i> Add Result</a></li>
-                            <li class="@ViewBag.viewResultClass"><a href="/studentresult/viewresult"><i class="fa fa-circle-o"></i> View Result </a></li>
-                        </ul>
-                    </li>
-                    
-                    
-                   
+
+
+
+
                 </ul>
             </section>
             <!-- /.sidebar -->

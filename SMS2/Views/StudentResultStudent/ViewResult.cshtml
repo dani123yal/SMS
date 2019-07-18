@@ -1,0 +1,26 @@
+﻿@model SMS2.Models.Student
+
+@{
+    ViewBag.Title = "AddResult";
+    Layout = "~/Views/Shared/_LayoutForStudent.cshtml";
+}
+
+<h2>Select a Subject</h2>
+<small style="padding-left:3px; font-size:larger;">View Result</small>
+
+
+<hr />
+
+
+
+@foreach (SMS2.Models.Subject subject in Model.Class.Subjects)
+{
+
+
+    <a href="/studentresultstudent/viewresultinside?subj_id=@subject.sub_ID">
+        <input type="button" class="btn btn-block btn-success btn-lg" value="@subject.sub_Name" style="height:100px; font-size:x-large;" />
+
+    </a>
+
+    <br />
+}

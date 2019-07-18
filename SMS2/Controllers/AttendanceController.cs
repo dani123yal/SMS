@@ -29,6 +29,13 @@ namespace SMS2.Controllers
         {
             if (WebSecurity.CurrentUserId != 0)
             {
+                ViewBag.dashboardClass = "";
+                ViewBag.studentResultsClass = "treeview";
+                ViewBag.viewResultClass = "";
+                ViewBag.addResultClass = "";
+                ViewBag.attendenceClass = "active treeview";
+                ViewBag.markAttendenceClass = "active";
+
 
                 int classId = Convert.ToInt32((from a in sms.Faculties
                                                where a.user_ID == WebSecurity.CurrentUserId
@@ -82,6 +89,15 @@ namespace SMS2.Controllers
         [HttpPost]
         public ActionResult MarkAttendance(AttendanceModel model, FormCollection form)
         {
+
+            ViewBag.dashboardClass = "";
+            ViewBag.studentResultsClass = "treeview";
+            ViewBag.viewResultClass = "";
+            ViewBag.addResultClass = "";
+            ViewBag.attendenceClass = "active treeview";
+            ViewBag.markAttendenceClass = "active";
+
+
             DateTime today = Convert.ToDateTime(form["date"]);
 
             if (checkIfAttExist(today, model.classId))
