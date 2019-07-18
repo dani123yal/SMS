@@ -23,6 +23,9 @@ namespace SMS2.Controllers
             ViewBag.studentResultsClass = "active treeview";
             ViewBag.viewResultClass = "";
             ViewBag.addResultClass = "active";
+            ViewBag.attendenceClass = "treeview";
+            ViewBag.markAttendenceClass = "";
+
 
             Faculty faculty = (from a in sms.Faculties where a.user_ID == WebSecurity.CurrentUserId select a).First();
 
@@ -32,11 +35,15 @@ namespace SMS2.Controllers
         [HttpGet]
         public ActionResult addResultInside(int subj_id)
         {
+            ViewBag.attendenceClass = "treeview";
+
             Session["subj_id"] = subj_id;
             ViewBag.dashboardClass = "";
             ViewBag.studentResultsClass = "active treeview";
             ViewBag.viewResultClass = "";
             ViewBag.addResultClass = "active";
+            ViewBag.markAttendenceClass = "";
+
 
             int? classID = (from a in sms.Subjects where a.sub_ID == subj_id select a.cl_ID).First();
 
@@ -62,7 +69,7 @@ namespace SMS2.Controllers
             sms.SaveChanges();
 
 
-            return RedirectToAction("Index","Home");
+            return RedirectToAction("viewResult","StudentResult");
         }
 
 
@@ -70,9 +77,12 @@ namespace SMS2.Controllers
         {
             ViewBag.dashboardClass = "";
             ViewBag.studentResultsClass = "active treeview";
+            ViewBag.attendenceClass = "treeview";
 
             ViewBag.viewResultClass = "active";
             ViewBag.addResultClass = "";
+            ViewBag.markAttendenceClass = "";
+
 
             Faculty faculty = (from a in sms.Faculties where a.user_ID == WebSecurity.CurrentUserId select a).First();
 
@@ -86,6 +96,9 @@ namespace SMS2.Controllers
             ViewBag.studentResultsClass = "active treeview";
             ViewBag.viewResultClass = "active";
             ViewBag.addResultClass = "";
+            ViewBag.attendenceClass = "treeview";
+            ViewBag.markAttendenceClass = "";
+
 
             var studentResult = (from a in sms.StudentResults where a.sub_ID == subj_id select a).ToList();
 

@@ -165,6 +165,7 @@
     <Compile Include="Controllers\AttendanceController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\StudentResultController.cs" />
+    <Compile Include="Controllers\StudentResultStudentController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -7369,6 +7370,10 @@
     <Content Include="Views\StudentResult\addResultInside.cshtml" />
     <Content Include="Views\StudentResult\viewResult.cshtml" />
     <Content Include="Views\StudentResult\viewResultInside.cshtml" />
+    <Content Include="Views\Shared\_LayoutForStudent.cshtml" />
+    <Content Include="Views\Home\IndexStudent.cshtml" />
+    <Content Include="Views\StudentResultStudent\ViewResult.cshtml" />
+    <Content Include="Views\StudentResultStudent\viewResultInside.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -1,0 +1,48 @@
+﻿@model IEnumerable<SMS2.Models.StudentResult>
+
+@{
+    ViewBag.Title = "viewResultInside";
+    Layout = "~/Views/Shared/_LayoutForStudent.cshtml";
+}
+
+<h2>Results</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        
+        <th>
+           Result Type
+        </th>
+        <th>
+            Maximum Marks
+        </th>
+        <th>
+           Obtained Marks
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+       
+        <td>
+            @Html.DisplayFor(modelItem => item.str_Type)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.str_MaxMarks)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.str_MarksObt)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.str_ID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.str_ID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.str_ID })
+        </td>
+    </tr>
+}
+
+</table>
