@@ -15,6 +15,9 @@ namespace SMS2.Controllers
 
         public ActionResult ViewResult()
         {
+            ViewBag.dashboardClass = "";
+            ViewBag.resultClass = "active";
+
             Student student = (from a in sms.Students where a.user_ID == WebSecurity.CurrentUserId select a).First();
 
             
@@ -24,7 +27,8 @@ namespace SMS2.Controllers
 
         public ActionResult viewResultInside(int subj_id)
         {
-
+            ViewBag.dashboardClass = "";
+            ViewBag.resultClass = "active";
             List<StudentResult> studentResults = (from a in sms.StudentResults where a.st_ID == WebSecurity.CurrentUserId && a.sub_ID == subj_id select a).ToList();
 
            
