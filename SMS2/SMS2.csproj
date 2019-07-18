@@ -163,13 +163,13 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\StudentResultController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\Attendance.cs" />
     <Compile Include="Models\Class.cs" />
     <Compile Include="Models\Faculty.cs" />
-    <Compile Include="Models\Model1.cs" />
     <Compile Include="Models\SMS.cs" />
     <Compile Include="Models\Student.cs" />
     <Compile Include="Models\StudentResult.cs" />
@@ -178,6 +178,7 @@
     <Compile Include="Models\webpages_Membership.cs" />
     <Compile Include="Models\webpages_OAuthMembership.cs" />
     <Compile Include="Models\webpages_Roles.cs" />
+    <Compile Include="ModelView\StudentStudentResultViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -7361,6 +7362,10 @@
     <Content Include="Theme\AdminLTE-2.4.13\README.md" />
     <Content Include="Theme\AdminLTE-2.4.13\yarn.lock" />
     <Content Include="Views\Account\Login.cshtml" />
+    <Content Include="Views\StudentResult\AddResult.cshtml" />
+    <Content Include="Views\StudentResult\addResultInside.cshtml" />
+    <Content Include="Views\StudentResult\viewResult.cshtml" />
+    <Content Include="Views\StudentResult\viewResultInside.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

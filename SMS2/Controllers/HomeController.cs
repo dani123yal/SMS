@@ -8,8 +8,18 @@ namespace SMS2.Controllers
 {
     public class HomeController : Controller
     {
+
+        
+
+
         public ActionResult Index()
         {
+            
+            ViewBag.dashboardClass = "active";
+            ViewBag.studentResultsClass = "treeview";
+            ViewBag.viewResultClass = "";
+            ViewBag.addResultClass = "";
+
             return View();
         }
 

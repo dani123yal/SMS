@@ -25,12 +25,22 @@ namespace SMS2.Models
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
+            modelBuilder.Entity<Class>()
+                .HasMany(e => e.Faculties)
+                .WithOptional(e => e.Class)
+                .HasForeignKey(e => e.classTeacherOf);
+
             modelBuilder.Entity<Faculty>()
                 .Property(e => e.fac_Salary)
                 .HasPrecision(19, 4);
 
             modelBuilder.Entity<User>()
                 .HasMany(e => e.Faculties)
+                .WithOptional(e => e.User)
+                .HasForeignKey(e => e.user_ID);
+
+            modelBuilder.Entity<User>()
+                .HasMany(e => e.Students)
                 .WithOptional(e => e.User)
                 .HasForeignKey(e => e.user_ID);
 

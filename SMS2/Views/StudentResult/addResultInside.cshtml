@@ -1,0 +1,68 @@
+﻿@model SMS2.ModelView.StudentStudentResultViewModel
+
+@{
+    ViewBag.Title = "addResultInside";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Add Result</h2>
+
+@using (Html.BeginForm("addResultInside", "StudentResult", FormMethod.Post))
+{
+@Html.AntiForgeryToken()
+
+<div class="form-horizontal">
+    
+    <hr />
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+
+    <div class="form-group">
+        @Html.Label("Student Name", htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.DropDownListFor(model => model.studentResultview.st_ID, new SelectList(Model.studentsview,"st_ID","st_Name")
+
+            , htmlAttributes: new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.studentResultview.st_ID, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+
+    <div class="form-group">
+        @Html.Label("Result Type", htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.studentResultview.str_Type, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.studentResultview.str_Type, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.Label("Maximum Marks", htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.studentResultview.str_MaxMarks, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.studentResultview.str_MaxMarks, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.Label("Obtained Marks", htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.studentResultview.str_MarksObt, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.studentResultview.str_MarksObt, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+
+
+
+
+
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="ADD" class="btn btn-default" />
+        </div>
+    </div>
+</div>
+}
+
