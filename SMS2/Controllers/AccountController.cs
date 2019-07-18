@@ -71,7 +71,7 @@ namespace MvcMembershipApp.Controllers
 
                 {
 
-                    if(Roles.Provider.GetRolesForUser(WebSecurity.CurrentUserName)[0].Contains("Faculty"))
+                    if(Roles.Provider.GetRolesForUser(username)[0].Contains("Faculty"))
                     Response.Redirect("/Home/Index");
                     else
                     {
