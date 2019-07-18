@@ -16,11 +16,11 @@ namespace SMS2.Controllers
         // GET: Attendance
         public ActionResult Index()
         {
-            
+
             return View();
             //return RedirectToAction("index","Home");
-            
-            
+
+
         }
 
 
@@ -29,14 +29,14 @@ namespace SMS2.Controllers
         {
             if (WebSecurity.CurrentUserId != 0)
             {
-                
+
                 int classId = Convert.ToInt32((from a in sms.Faculties
                                                where a.user_ID == WebSecurity.CurrentUserId
                                                select a.classTeacherOf).SingleOrDefault());
 
                 ViewBag.classID = (from a in sms.Classes
-                                  where a.cl_ID == classId
-                                  select a.cl_Name).SingleOrDefault();
+                                   where a.cl_ID == classId
+                                   select a.cl_Name).SingleOrDefault();
                 //Response.Write("<script>alert(" + ViewBag.classID + ");</script>");
                 var studentList = (from a in sms.Students
                                    where a.cl_ID == classId
@@ -47,7 +47,7 @@ namespace SMS2.Controllers
                 att.attendanceList = new List<AttendanceModel>();
 
                 att.classId = classId;
-                foreach(var student in studentList)
+                foreach (var student in studentList)
                 {
                     att.attendanceList.Add(new AttendanceModel
                     {
@@ -86,7 +86,7 @@ namespace SMS2.Controllers
 
             if (checkIfAttExist(today, model.classId))
             {
-                foreach(AttendanceModel a in model.attendanceList)
+                foreach (AttendanceModel a in model.attendanceList)
                 {
                     if (a.attStatus)
                     {
@@ -106,7 +106,7 @@ namespace SMS2.Controllers
                 sms.SaveChanges();
             }
 
-            return View("Index","Home");
+            return RedirectToAction("Index", "Home");
         }
 
         public bool checkIfAttExist(DateTime date, int classId)
@@ -118,11 +118,11 @@ namespace SMS2.Controllers
                        select a;
 
             int i = 0;
-            foreach(Attendance a in data)
+            foreach (Attendance a in data)
             {
                 i++;
             }
-            if(i > 0)
+            if (i > 0)
             {
                 return false;
             }
@@ -130,5 +130,106 @@ namespace SMS2.Controllers
             return true;
         }
 
+
+        [HttpGet]
+        public ActionResult ViewAttendance()
+        {
+            if (WebSecurity.CurrentUserId != 0)
+            {
+
+                int classId = Convert.ToInt32((from a in sms.Faculties
+                                               where a.user_ID == WebSecurity.CurrentUserId
+                                               select a.classTeacherOf).SingleOrDefault());
+
+
+                ViewBag.classID = (from a in sms.Classes
+                                   where a.cl_ID == classId
+                                   select a.cl_Name).SingleOrDefault();
+
+
+
+
+                //Response.Write("<script>alert("+studentList.Count+");</script>");
+
+
+                AttendanceModel att = new AttendanceModel();
+
+                att.classId = classId;
+
+                return View(att);
+            }
+            return View(new AttendanceModel());
+        }
+
+        [HttpPost]
+        public ActionResult ViewAttendance(AttendanceModel attendance, FormCollection form)
+        {
+            DateTime date = Convert.ToDateTime(form["date"]);
+            
+            return RedirectToAction("AttendanceDetails","Attendance", new { classId = attendance.classId, date = date});
+        }
+
+
+        [HttpGet]
+        public ActionResult AttendanceDetails(int classId, DateTime date)
+        {
+            AttendanceModel att = new AttendanceModel();
+
+            att.attendanceList = new List<AttendanceModel>();
+
+            var attendanceList = (from a in sms.Attendances
+                                  where a.att_Date == date
+                                  && a.cl_ID == classId
+                                  select a).ToList();
+
+            ViewBag.classID = (from a in sms.Classes
+                               where a.cl_ID == classId
+                               select a.cl_Name).SingleOrDefault();
+
+            ViewBag.date = date.ToShortDateString();
+
+            foreach (Attendance student in attendanceList)
+            {
+                Student st = getStudent(student.st_ID);
+                att.attendanceList.Add(new AttendanceModel
+                {
+                    attendance = new Attendance
+                    {
+                        att_Date = student.att_Date,
+                        cl_ID = student.cl_ID,
+                        att_Status = student.att_Status
+                    },
+                    studentList = new Student
+                    {
+                        st_ID = st.st_ID,
+                        st_Name = st.st_Name,
+                    }
+                });
+            }
+
+            return View(att);
+        }
+
+        [HttpPost]
+        public ActionResult AttendanceDetails()
+        {
+
+            return View();
+        }
+
+
+        public Student getStudent(int? id)
+        {
+            Student st = (from a in sms.Students
+                             where a.st_ID == id
+                             select a).FirstOrDefault();
+
+            if(st != null)
+            {
+                return st;
+            }
+
+            return null;
+        }
     }
 }

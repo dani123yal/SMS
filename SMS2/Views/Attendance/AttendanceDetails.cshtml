@@ -1,0 +1,55 @@
+﻿@model SMS2.ViewModel.AttendanceModel
+
+@{
+    ViewBag.Title = "AttendanceDetails";
+}
+
+<h2>AttendanceDetails</h2>
+
+    @Html.AntiForgeryToken()
+    <div class="row">
+        <div class="col-md-6">
+            <div class="input-group">
+                <span class="input-group-addon">DATE</span>
+                <input class="form-control text-center" type="text" value="@ViewBag.date" name="date" readonly="readonly" />
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="input-group">
+                <span class="input-group-addon">CLASS</span>
+                @Html.HiddenFor(item => item.classId)
+                <input class="form-control text-center" type="text" value="@ViewBag.classID" name="classId" readonly="readonly" />
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <hr />
+            <table class="table table-condensed">
+                <thead>
+                    <tr>
+                        <th style="width: 10px">#</th>
+                        <th>Student Name</th>
+                        <th>Student ID</th>
+                        <th style="width: 40px">Attendance</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @for (int i = 0; i < Model.attendanceList.Count; i++)
+                    {
+                        <tr>
+                            <td>@(i + 1)</td>
+                            @Html.HiddenFor(item => item.attendanceList[i].studentList.st_Name)
+                            <td>@Html.DisplayFor(item => item.attendanceList[i].studentList.st_Name)</td>
+                            @Html.HiddenFor(item => item.attendanceList[i].studentList.st_ID)
+                            <td>@Html.DisplayFor(item => item.attendanceList[i].studentList.st_ID)</td>
+                            <td>
+                                @Html.DisplayFor(item => item.attendanceList[i].attendance.att_Status)
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>

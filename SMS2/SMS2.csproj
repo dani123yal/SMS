@@ -7369,6 +7369,8 @@
     <Content Include="Views\StudentResult\addResultInside.cshtml" />
     <Content Include="Views\StudentResult\viewResult.cshtml" />
     <Content Include="Views\StudentResult\viewResultInside.cshtml" />
+    <Content Include="Views\Attendance\ViewAttendance.cshtml" />
+    <Content Include="Views\Attendance\AttendanceDetails.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

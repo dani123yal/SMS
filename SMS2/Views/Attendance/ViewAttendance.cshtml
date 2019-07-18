@@ -1,0 +1,53 @@
+﻿@model SMS2.ViewModel.AttendanceModel
+
+@{
+    ViewBag.Title = "ViewAttendance";
+}
+
+<h2>ViewAttendance</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+
+@using (Html.BeginForm("ViewAttendance", "Attendance", FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+    <div class="row">
+        <div class="col-md-6">
+            <div class="input-group date">
+                <div class="input-group-addon">
+                    <b>Date:</b>
+                    <i class="fa fa-calendar"></i>
+                </div>
+                <input type="text" name="date" class="form-control pull-right" id="datepicker">
+            </div>
+                <!-- /.input group -->
+        </div>
+        <div class="col-md-6">
+            <div class="input-group">
+                <span class="input-group-addon">CLASS</span>
+                @Html.HiddenFor(item => item.classId)
+                <input class="form-control text-center" type="text" value="@ViewBag.classID" name="classId" readonly="readonly" />
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-5">
+            <input type="submit" name="" value="View" class="btn btn-block btn-success" />
+        </div>
+    </div>
+
+}
+
+<script src="~/Theme/AdminLTE-2.4.13/bower_components/jquery/dist/jquery.min.js"></script>
+<script>
+    $(function () {
+       
+        //Date picker
+        $('#datepicker').datepicker({
+            autoclose: true
+        })
+       
+    })
+</script>
