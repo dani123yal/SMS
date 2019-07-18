@@ -12,6 +12,7 @@ namespace SMS2.Models
         public User()
         {
             Faculties = new HashSet<Faculty>();
+            Students = new HashSet<Student>();
             webpages_Roles = new HashSet<webpages_Roles>();
         }
 
@@ -23,6 +24,9 @@ namespace SMS2.Models
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Faculty> Faculties { get; set; }
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Student> Students { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<webpages_Roles> webpages_Roles { get; set; }

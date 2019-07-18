@@ -32,6 +32,10 @@ namespace SMS2.Models
 
         public int? user_ID { get; set; }
 
+        public int? classTeacherOf { get; set; }
+
+        public virtual Class Class { get; set; }
+
         public virtual User User { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

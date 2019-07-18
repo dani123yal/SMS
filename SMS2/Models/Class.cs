@@ -13,6 +13,7 @@ namespace SMS2.Models
         public Class()
         {
             Attendances = new HashSet<Attendance>();
+            Faculties = new HashSet<Faculty>();
             Students = new HashSet<Student>();
             StudentResults = new HashSet<StudentResult>();
             Subjects = new HashSet<Subject>();
@@ -21,11 +22,14 @@ namespace SMS2.Models
         [Key]
         public int cl_ID { get; set; }
 
-        [StringLength(1)]
+        [StringLength(2)]
         public string cl_Name { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Attendance> Attendances { get; set; }
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Faculty> Faculties { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Student> Students { get; set; }

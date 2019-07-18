@@ -105,12 +105,12 @@ namespace MvcMembershipApp.Controllers
 
             }
 
-            string username = "daniyalsafdar9@gmail.com";
-            string password = "123456";
+            string username = "aishah.tuf7@gmail.com";
+            string password = "12345";
 
             Faculty faculty = new Faculty();
-            faculty.fac_Name = "Daniyal Safdar";
-            faculty.fac_CNIC = "44206-1285380-5";
+            faculty.fac_Name = "Aishah Tufail";
+            faculty.fac_CNIC = "44206-1285452-5";
             faculty.fac_phoneNo = "030013231231";
             faculty.fac_Salary = 100000;
             
