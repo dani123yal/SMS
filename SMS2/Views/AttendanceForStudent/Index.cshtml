@@ -1,0 +1,38 @@
+﻿@model SMS2.ViewModel.StudentAttendanceModel
+
+@{
+                /**/
+
+                ViewBag.Title = "Index";
+                Layout = "~/Views/Shared/_LayoutForStudent.cshtml";
+}
+
+@using (Html.BeginForm("index", "AttendanceForStudent", FormMethod.Post))
+{
+    <div class="box">
+        <div class="box-body">
+            <div class="form-group">
+                <select name="month" class="form-control">
+                    <option value="1">January</option>
+                    <option value="2">Febuary</option>
+                    <option value="3">March</option>
+                    <option value="4">April</option>
+                    <option value="5">May</option>
+                    <option value="6">June</option>
+                    <option value="7">July</option>
+                    <option value="8">August</option>
+                    <option value="9">September</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <input type="submit" name="name" value="View" class="btn btn-block  btn-primary"/>
+            </div>
+        </div>
+    </div>
+
+}
+
+
+
+
+

@@ -23,13 +23,14 @@
                         <div class="input-group-addon">
                             DATE &nbsp; <i class="fa fa-calendar"></i>
                         </div>
-                        <input class="form-control text-center" type="text" value="@DateTime.Now.ToShortDateString()" name="classId" readonly="readonly" />
+                        <input class="form-control text-center" type="text" value="@DateTime.Now.ToShortDateString()" name="date" readonly="readonly" />
                     </div>
                 </div>
                 <div class="col-md-5">
                     <div class="input-group">
                         <span class="input-group-addon">CLASS</span>
                         @Html.HiddenFor(item => item.classId)
+                        @*@Html.DisplayFor(item => item.classId)*@
                         <input class="form-control text-center" type="text" value="@ViewBag.classID" name="classId" readonly="readonly" />
                     </div>
                 </div>

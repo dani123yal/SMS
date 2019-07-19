@@ -180,6 +180,7 @@ namespace SMS2.Controllers
         [HttpPost]
         public ActionResult ViewAttendance(AttendanceModel attendance, FormCollection form)
         {
+            string da = form["date"];
             DateTime date = Convert.ToDateTime(form["date"]);
             
             return RedirectToAction("AttendanceDetails","Attendance", new { classId = attendance.classId, date = date});
