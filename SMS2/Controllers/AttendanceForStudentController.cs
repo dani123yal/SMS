@@ -25,8 +25,8 @@ namespace SMS2.Controllers
                 ViewBag.viewResultClass = "";
                 ViewBag.addResultClass = "";
                 ViewBag.attendenceClass = "active treeview";
-                ViewBag.markAttendenceClass = "active";
-                
+                ViewBag.markAttendenceClass = "";
+                ViewBag.attendenceClass = "active";
                 return View();
             }
 
@@ -45,6 +45,14 @@ namespace SMS2.Controllers
         [HttpGet]
         public ActionResult viewStudentAttendance(int month)
         {
+            ViewBag.dashboardClass = "";
+            ViewBag.studentResultsClass = "treeview";
+            ViewBag.viewResultClass = "";
+            ViewBag.addResultClass = "";
+            ViewBag.attendenceClass = "active treeview";
+            ViewBag.markAttendenceClass = "";
+            ViewBag.attendenceClass = "active";
+
             Student st = (from a in sms.Students
                           where a.user_ID == WebSecurity.CurrentUserId
                           select a).SingleOrDefault();
