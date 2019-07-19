@@ -1,40 +1,59 @@
 ﻿@model SMS2.ViewModel.AttendanceModel
 
 @{
-    ViewBag.Title = "ViewAttendance";
+                /**/
+
+                ViewBag.Title = "View Attendance";
 }
 
-<h2>ViewAttendance</h2>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
+
 
 @using (Html.BeginForm("ViewAttendance", "Attendance", FormMethod.Post))
 {
     @Html.AntiForgeryToken()
     <div class="row">
-        <div class="col-md-6">
-            <div class="input-group date">
-                <div class="input-group-addon">
-                    <b>Date:</b>
-                    <i class="fa fa-calendar"></i>
+        <div class="col-sm-12">
+            <div class="box box-danger">
+                <div class="box-header with-border">
+                    <h2>&nbsp;&nbsp;View Attendance</h2>
                 </div>
-                <input type="text" name="date" class="form-control pull-right" id="datepicker">
+                <div class="box-body">
+
+                    <div class="row">
+                        <div class="col-md-1"></div>
+                        <div class="col-md-5">
+                            <div class="input-group date">
+                                <div class="input-group-addon">
+                                    <b>Date&nbsp;&nbsp;</b>
+                                    <i class="fa fa-calendar"></i>
+                                </div>
+                                <input autocomplete="off" type="text" name="date" class="form-control pull-right" id="datepicker">
+                            </div>
+                            <!-- /.input group -->
+                        </div>
+                        <div class="col-md-5">
+                            <div class="input-group">
+                                <span class="input-group-addon">CLASS</span>
+                                @Html.HiddenFor(item => item.classId)
+                                <input class="form-control text-center" type="text" value="@ViewBag.classID" name="classId" readonly="readonly" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+
+                    </div>
+                    <div class="col-md-4">
+                    </div>
+                    <div style="padding-bottom:30px; padding-top:30px;" class="col-md-3">
+                        <button type="submit" class="btn btn-block btn-success btn-lg">View Attendence</button>
+                    </div>
+                    <div class="col-md-5">
+                    </div>
+                    <div class="col-md-4">
+                    </div>
+                </div>
             </div>
-                <!-- /.input group -->
-        </div>
-        <div class="col-md-6">
-            <div class="input-group">
-                <span class="input-group-addon">CLASS</span>
-                @Html.HiddenFor(item => item.classId)
-                <input class="form-control text-center" type="text" value="@ViewBag.classID" name="classId" readonly="readonly" />
-            </div>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-md-5">
-            <input type="submit" name="" value="View" class="btn btn-block btn-success" />
         </div>
     </div>
 
@@ -42,12 +61,12 @@
 
 <script src="~/Theme/AdminLTE-2.4.13/bower_components/jquery/dist/jquery.min.js"></script>
 <script>
-    $(function () {
-       
-        //Date picker
-        $('#datepicker').datepicker({
-            autoclose: true
-        })
-       
-    })
+                $(function () {
+
+                    //Date picker
+                    $('#datepicker').datepicker({
+                        autoclose: true
+                    })
+
+                })
 </script>

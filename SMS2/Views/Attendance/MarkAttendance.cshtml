@@ -26,7 +26,7 @@
                             <b>Date&nbsp;&nbsp;</b>
                             <i class="fa fa-calendar"></i>
                         </div>
-                        <input class="form-control text-center" type="text" value="@DateTime.Now.ToShortDateString()" name="classId" readonly="readonly" />
+                        <input class="form-control text-center" type="text" value="@DateTime.Now.ToShortDateString()" name="date" readonly="readonly" />
                     </div>
                 </div>
                 <div class="col-md-5">
@@ -35,6 +35,7 @@
                             <b>Class</b>
                         </div>
                         @Html.HiddenFor(item => item.classId)
+                        
                         <input class="form-control text-center" type="text" value="@ViewBag.classID" name="classId" readonly="readonly" />
                     </div>
                 </div>
