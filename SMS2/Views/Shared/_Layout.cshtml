@@ -383,6 +383,23 @@
         <!-- Content Wrapper. Contains page content -->
         <div class="content-wrapper">
             <section class="content">
+                @if (Convert.ToBoolean(TempData["fromAttendance"]) == true)
+                {
+                    if (Convert.ToBoolean(TempData["isMarked"]) == true)
+                    {
+                        <div id="msg" class="alert alert-success" role="alert" runat="server" visible="false">
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                            <strong>Success!</strong> Attendance saved!
+                        </div>
+                    }
+                    else
+                    {
+                        <div id="msg" class="alert alert-danger" role="alert" runat="server" visible="false">
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                            <strong>Failed!</strong> Attendance has already been marked!
+                        </div>
+                    }
+                }
                 @RenderBody()
             </section>
         </div>
@@ -602,5 +619,12 @@
     <script src="~/Theme/AdminLTE-2.4.13/dist/js/pages/dashboard.js"></script>
     <!-- AdminLTE for demo purposes -->
     <script src="~/Theme/AdminLTE-2.4.13/dist/js/demo.js"></script>
+    <script>
+        window.setTimeout(function () {
+            $("#msg").fadeTo(500, 0).slideUp(500, function () {
+                $(this).remove();
+            });
+        }, 4000);
+    </script>
 </body>
 </html>

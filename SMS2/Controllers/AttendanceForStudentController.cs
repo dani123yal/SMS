@@ -67,6 +67,9 @@ namespace SMS2.Controllers
             StudentAttendanceModel stModel = new StudentAttendanceModel();
             //return Content(attendanceList.Count.ToString());  
 
+            DateTime forMonth = new DateTime(1, month, 1);
+            ViewBag.month = forMonth.ToString("MMMMMMMMMM");
+
             stModel.student = st;
             stModel.AttendanceList = attendanceList;
             return View(stModel);

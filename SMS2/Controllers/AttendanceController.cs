@@ -1,4 +1,4 @@
-﻿using System;
+﻿    using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -120,7 +120,14 @@ namespace SMS2.Controllers
                 }
 
                 sms.SaveChanges();
+                TempData["isMarked"] = true;
             }
+            else
+            {
+                TempData["isMarked"] = false;
+            }
+
+            TempData["fromAttendance"] = true;
 
             return RedirectToAction("Index", "Home");
         }
