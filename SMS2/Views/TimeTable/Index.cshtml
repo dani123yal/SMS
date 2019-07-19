@@ -4,5 +4,127 @@
     Layout = "~/Views/Shared/_LayoutForStudent.cshtml";
 }
 
-<h2>Index</h2>
+<!DOCTYPE html>
+<html>
+<head>
 
+    <style>
+        .rotated {
+            transform: rotate(90deg);
+        }
+
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        td, th {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+
+        tr:nth-child(even) {
+            background-color: #dddddd;
+        }
+    </style>
+</head>
+<body>
+    <div class="box box-danger">
+        <div class="box-header with-border">
+            <h2>TimeTable</h2>
+        </div>
+        <div class="box-body">
+            <table>
+                <tr>
+                    <th style="width:30px;">Time</th>
+                    <th>Monday</th>
+                    <th>Tuesday</th>
+                    <th>Wednesday</th>
+                    <th>Thursday</th>
+                    <th>Friday</th>
+                    <th style="width:8%;">Saturday</th>
+                    <th style="width:8%;">Sunday</th>
+                </tr>
+                <tr>
+                    <td style="font-weight:bold">8:00 AM</td>
+                    <td>Maths</td>
+                    <td>Maths</td>
+                    <td>Maths</td>
+                    <td>Maths</td>
+                    <td>Maths</td>
+                    <td colspan="2" rowspan="10" ;writing-mode: tb-rl; transform: rotate(-180deg); style="font-size:40px; font-weight:bold; background-color:white; color:red; text-align:center;"><p class="rotated">Holiday</p></td>
+                </tr>
+                <tr>
+                    <td style="font-weight:bold">8:45 AM</td>
+                    <td>Maths</td>
+                    <td>Maths</td>
+                    <td>Maths</td>
+                    <td>Science</td>
+                    <td>SST</td>
+
+                </tr>
+                <tr>
+                    <td style="font-weight:bold">9:30 AM</td>
+                    <td>Maths</td>
+                    <td>Maths</td>
+                    <td>Maths</td>
+                    <td>Science</td>
+                    <td>SST</td>
+                </tr>
+                <tr>
+                    <td style="font-weight:bold">10:15 AM</td>
+                    <td>Maths</td>
+                    <td>Maths</td>
+                    <td>Maths</td>
+                    <td>Science</td>
+                    <td>Islamiat</td>
+
+                </tr>
+                <tr>
+                    <td style="font-weight:bold">11:00 AM</td>
+                    <td colspan="5" style="font-size:40px; font-weight:bold; background-color:white; color:red; text-align:center;">Break</td>
+
+
+                </tr>
+                <tr>
+                    <td style="font-weight:bold">11:30 AM</td>
+                    <td>English</td>
+                    <td>Urdu</td>
+                    <td>Science</td>
+                    <td>Science</td>
+                    <td>SST</td>
+
+                </tr>
+                <tr>
+                    <td style="font-weight:bold">12:15 AM</td>
+                    <td>Science</td>
+                    <td>Science</td>
+                    <td>Urdu</td>
+                    <td>Islamiat</td>
+                    <td>English</td>
+
+                </tr>
+                <tr>
+                    <td style="font-weight:bold">01:00 AM</td>
+                    <td>Urdu</td>
+                    <td>Islamiat</td>
+                    <td>Science</td>
+                    <td>Drawing</td>
+                    <td rowspan="2" style="font-size:30px; font-weight:bold; background-color:white; color:crimson; text-align:center;">Off</td>
+
+                </tr>
+                <tr>
+                    <td style="font-weight:bold">01:45 AM</td>
+                    <td>Drawing</td>
+                    <td>English</td>
+                    <td>Urdu</td>
+                    <td>Islamiat</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+</body>
+</html>
