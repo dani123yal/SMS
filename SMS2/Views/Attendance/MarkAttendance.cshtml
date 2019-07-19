@@ -1,12 +1,12 @@
 ﻿@model SMS2.ViewModel.AttendanceModel
 
 @{
-                /**/
+    /**/
 
-                /**/
+    /**/
 
-                ViewBag.Title = "MarkAttendance";
-                Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Mark Attendance";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 
@@ -14,37 +14,42 @@
 {
     @Html.AntiForgeryToken()
     <div class="box box-danger">
-        <h2> &nbsp;&nbsp;MarkAttendance</h2>
-        <div class="container">
-
-            <div class="row">
+        <div class="box-header with-border">
+            <h2> &nbsp;&nbsp;Mark Attendance</h2>
+        </div>
+        <div class="box-body">
+            <div class="row" style="width:104%;">
+                <div class="col-md-1"></div>
                 <div class="col-md-5">
                     <div class="input-group">
                         <div class="input-group-addon">
-                            DATE &nbsp; <i class="fa fa-calendar"></i>
+                            <b>Date&nbsp;&nbsp;</b>
+                            <i class="fa fa-calendar"></i>
                         </div>
                         <input class="form-control text-center" type="text" value="@DateTime.Now.ToShortDateString()" name="classId" readonly="readonly" />
                     </div>
                 </div>
                 <div class="col-md-5">
                     <div class="input-group">
-                        <span class="input-group-addon">CLASS</span>
+                        <div class="input-group-addon">
+                            <b>Class</b>
+                        </div>
                         @Html.HiddenFor(item => item.classId)
                         <input class="form-control text-center" type="text" value="@ViewBag.classID" name="classId" readonly="readonly" />
                     </div>
                 </div>
             </div>
-            <div class="row">
-                <hr class="col-md-10" />
+            <div class="row" style="width:102%; padding-left:10px;">
+                <hr />
             </div>
 
-            <div class="row">
+            <div class="row" style="width:104%;">
                 <div class="col-md-12">
 
                     <table class="table table-condensed">
                         <thead>
                             <tr>
-                                <th>#</th>
+                                <th style="padding-left:10px; width:50px;">#</th>
                                 <th>Student Name</th>
                                 <th>Student ID</th>
                                 <th>Attendance</th>
@@ -54,7 +59,7 @@
                             @for (int i = 0; i < Model.attendanceList.Count; i++)
                             {
                                 <tr>
-                                    <td>@(i + 1)</td>
+                                    <td style="padding-left:10px;">@(i + 1)</td>
                                     @Html.HiddenFor(item => item.attendanceList[i].studentList.st_Name)
                                     <td>@Html.DisplayFor(item => item.attendanceList[i].studentList.st_Name)</td>
                                     @Html.HiddenFor(item => item.attendanceList[i].studentList.st_ID)
@@ -68,7 +73,7 @@
                 </div>
             </div>
 
-            <div class="row">
+            <div class="row" style="width:104%;">
 
             </div>
             <div class="col-md-4">

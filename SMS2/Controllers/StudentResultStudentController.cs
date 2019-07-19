@@ -29,7 +29,7 @@ namespace SMS2.Controllers
         {
             ViewBag.dashboardClass = "";
             ViewBag.resultClass = "active";
-            List<StudentResult> studentResults = (from a in sms.StudentResults where a.st_ID == WebSecurity.CurrentUserId && a.sub_ID == subj_id select a).ToList();
+            List<StudentResult> studentResults = (from a in sms.StudentResults where a.Student.user_ID == WebSecurity.CurrentUserId && a.sub_ID == subj_id select a).ToList();
 
            
 

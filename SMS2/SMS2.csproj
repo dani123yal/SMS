@@ -166,6 +166,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\StudentResultController.cs" />
     <Compile Include="Controllers\StudentResultStudentController.cs" />
+    <Compile Include="Controllers\TimeTableController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -7376,6 +7377,7 @@
     <Content Include="Views\StudentResultStudent\viewResultInside.cshtml" />
     <Content Include="Views\Attendance\ViewAttendance.cshtml" />
     <Content Include="Views\Attendance\AttendanceDetails.cshtml" />
+    <Content Include="Views\TimeTable\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
