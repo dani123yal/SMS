@@ -24,10 +24,21 @@
             <center>
                 <h2 style="font-family:Arial;font-size:35px;font-weight:bold;">View Result</h2>
 
-                <p style="font-family:Arial;font-size:25px;">
-                    @Model.ElementAt(0).Subject.sub_Name
-                <p>
-            </center>
+
+
+                @try
+                {
+                    <p style="font-family:Arial;font-size:25px;">
+                        @Model.ElementAt(0).Subject.sub_Name
+                    </p>
+                        }
+                        catch
+                        {
+
+                        }
+
+
+                </center>
         </div>
     </div>
 
