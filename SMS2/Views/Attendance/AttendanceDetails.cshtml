@@ -1,55 +1,72 @@
 ﻿@model SMS2.ViewModel.AttendanceModel
 
 @{
-    ViewBag.Title = "AttendanceDetails";
+    ViewBag.Title = "Attendance Details";
 }
 
-<h2>AttendanceDetails</h2>
+@Html.AntiForgeryToken()
+<div class="box box-danger">
+    <div class="box-header with-border">
 
-    @Html.AntiForgeryToken()
-    <div class="row">
-        <div class="col-md-6">
-            <div class="input-group">
-                <span class="input-group-addon">DATE</span>
-                <input class="form-control text-center" type="text" value="@ViewBag.date" name="date" readonly="readonly" />
+        <h2> &nbsp;&nbsp;Attendance Details</h2>
+    </div>
+    <div class="box-body">
+
+        <div class="row" style="width:104%" ;>
+            <div class="col-md-1"></div>
+            <div class="col-md-5">
+                <div class="input-group">
+                    <div class="input-group-addon">
+                        <b>Date&nbsp;&nbsp;</b>
+                        <i class="fa fa-calendar"></i>
+                    </div>
+                    <input class="form-control text-center" type="text" value="@ViewBag.date" name="date" readonly="readonly" />
+                </div>
+            </div>
+            <div class="col-md-5">
+                <div class="input-group">
+                    <div class="input-group-addon">
+                        <b>Class</b>
+                    </div>
+                    @Html.HiddenFor(item => item.classId)
+                    <input class="form-control text-center" type="text" value="@ViewBag.classID" name="classId" readonly="readonly" />
+                </div>
             </div>
         </div>
-        <div class="col-md-6">
-            <div class="input-group">
-                <span class="input-group-addon">CLASS</span>
-                @Html.HiddenFor(item => item.classId)
-                <input class="form-control text-center" type="text" value="@ViewBag.classID" name="classId" readonly="readonly" />
+        <div class="row" style="width:102%; padding-left:10px;"> <hr /></div>
+        <div class="row" style="width:104%" ;>
+            <div class="col-md-10">
+            </div>
+
+            <div class="row" style="width:104%" ;>
+                <div class="col-md-12">
+                    <table class="table table-condensed">
+                        <thead>
+                            <tr>
+                                <th style="padding-left:20px; width:50px;">#</th>
+                                <th>Student Name</th>
+                                <th>Student ID</th>
+                                <th>Attendance</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @for (int i = 0; i < Model.attendanceList.Count; i++)
+                            {
+                                <tr>
+                                    <td style="padding-left:20px;">@(i + 1)</td>
+                                    @Html.HiddenFor(item => item.attendanceList[i].studentList.st_Name)
+                                    <td>@Html.DisplayFor(item => item.attendanceList[i].studentList.st_Name)</td>
+                                    @Html.HiddenFor(item => item.attendanceList[i].studentList.st_ID)
+                                    <td style="padding-left:25px;">@Html.DisplayFor(item => item.attendanceList[i].studentList.st_ID)</td>
+                                    <td>
+                                        @Html.DisplayFor(item => item.attendanceList[i].attendance.att_Status)
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </div>
     </div>
-
-    <div class="row">
-        <div class="col-md-12">
-            <hr />
-            <table class="table table-condensed">
-                <thead>
-                    <tr>
-                        <th style="width: 10px">#</th>
-                        <th>Student Name</th>
-                        <th>Student ID</th>
-                        <th style="width: 40px">Attendance</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    @for (int i = 0; i < Model.attendanceList.Count; i++)
-                    {
-                        <tr>
-                            <td>@(i + 1)</td>
-                            @Html.HiddenFor(item => item.attendanceList[i].studentList.st_Name)
-                            <td>@Html.DisplayFor(item => item.attendanceList[i].studentList.st_Name)</td>
-                            @Html.HiddenFor(item => item.attendanceList[i].studentList.st_ID)
-                            <td>@Html.DisplayFor(item => item.attendanceList[i].studentList.st_ID)</td>
-                            <td>
-                                @Html.DisplayFor(item => item.attendanceList[i].attendance.att_Status)
-                            </td>
-                        </tr>
-                    }
-                </tbody>
-            </table>
-        </div>
-    </div>
+</div>

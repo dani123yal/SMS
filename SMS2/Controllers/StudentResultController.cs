@@ -25,7 +25,7 @@ namespace SMS2.Controllers
             ViewBag.addResultClass = "active";
             ViewBag.attendenceClass = "treeview";
             ViewBag.markAttendenceClass = "";
-
+            ViewBag.viewAttendenceClass = "";
 
             Faculty faculty = (from a in sms.Faculties where a.user_ID == WebSecurity.CurrentUserId select a).First();
 
@@ -43,7 +43,7 @@ namespace SMS2.Controllers
             ViewBag.viewResultClass = "";
             ViewBag.addResultClass = "active";
             ViewBag.markAttendenceClass = "";
-
+            ViewBag.viewAttendenceClass = "";
 
             int? classID = (from a in sms.Subjects where a.sub_ID == subj_id select a.cl_ID).First();
 
@@ -82,7 +82,7 @@ namespace SMS2.Controllers
             ViewBag.viewResultClass = "active";
             ViewBag.addResultClass = "";
             ViewBag.markAttendenceClass = "";
-
+            ViewBag.viewAttendenceClass = "";
 
             Faculty faculty = (from a in sms.Faculties where a.user_ID == WebSecurity.CurrentUserId select a).First();
 
@@ -98,7 +98,7 @@ namespace SMS2.Controllers
             ViewBag.addResultClass = "";
             ViewBag.attendenceClass = "treeview";
             ViewBag.markAttendenceClass = "";
-
+            ViewBag.viewAttendenceClass = "";
 
             var studentResult = (from a in sms.StudentResults where a.sub_ID == subj_id select a).ToList();
 

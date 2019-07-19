@@ -35,7 +35,7 @@ namespace SMS2.Controllers
                 ViewBag.addResultClass = "";
                 ViewBag.attendenceClass = "active treeview";
                 ViewBag.markAttendenceClass = "active";
-
+                ViewBag.viewAttendenceClass = "";
 
                 int classId = Convert.ToInt32((from a in sms.Faculties
                                                where a.user_ID == WebSecurity.CurrentUserId
@@ -96,7 +96,7 @@ namespace SMS2.Controllers
             ViewBag.addResultClass = "";
             ViewBag.attendenceClass = "active treeview";
             ViewBag.markAttendenceClass = "active";
-
+            ViewBag.viewAttendenceClass = "";
 
             DateTime today = Convert.ToDateTime(form["date"]);
 
@@ -150,6 +150,14 @@ namespace SMS2.Controllers
         [HttpGet]
         public ActionResult ViewAttendance()
         {
+            ViewBag.dashboardClass = "";
+            ViewBag.studentResultsClass = "treeview";
+            ViewBag.viewResultClass = "";
+            ViewBag.addResultClass = "";
+            ViewBag.attendenceClass = "active treeview";
+            ViewBag.markAttendenceClass = "";
+            ViewBag.viewAttendenceClass = "active";
+
             if (WebSecurity.CurrentUserId != 0)
             {
 
@@ -181,8 +189,8 @@ namespace SMS2.Controllers
         public ActionResult ViewAttendance(AttendanceModel attendance, FormCollection form)
         {
             string da = form["date"];
-            DateTime date = Convert.ToDateTime(form["date"]);
-            
+            DateTime date = DateTime.ParseExact(da, "MM/dd/yyyy", null);
+
             return RedirectToAction("AttendanceDetails","Attendance", new { classId = attendance.classId, date = date});
         }
 
@@ -190,6 +198,15 @@ namespace SMS2.Controllers
         [HttpGet]
         public ActionResult AttendanceDetails(int classId, DateTime date)
         {
+
+            ViewBag.dashboardClass = "";
+            ViewBag.studentResultsClass = "treeview";
+            ViewBag.viewResultClass = "";
+            ViewBag.addResultClass = "";
+            ViewBag.attendenceClass = "active treeview";
+            ViewBag.markAttendenceClass = "";
+            ViewBag.viewAttendenceClass = "active";
+
             AttendanceModel att = new AttendanceModel();
 
             att.attendanceList = new List<AttendanceModel>();

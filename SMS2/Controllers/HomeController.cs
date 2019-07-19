@@ -21,6 +21,7 @@ namespace SMS2.Controllers
             ViewBag.addResultClass = "";
             ViewBag.attendenceClass = "treeview";
             ViewBag.markAttendenceClass = "";
+            ViewBag.viewAttendenceClass = "";
 
 
             return View();
@@ -35,7 +36,8 @@ namespace SMS2.Controllers
             //ViewBag.addResultClass = "";
             //ViewBag.attendenceClass = "treeview";
             //ViewBag.markAttendenceClass = "";
-
+            ViewBag.dashboardClass = "active";
+            ViewBag.resultClass = "";
 
             return View();
         }
