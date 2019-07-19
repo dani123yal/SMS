@@ -621,17 +621,12 @@
     <script src="~/Theme/AdminLTE-2.4.13/dist/js/demo.js"></script>
 
     <!-- THINKS TO ADD -->
-    <!-- jQuery 3 -->
-    <script src="~/Theme/AdminLTE-2.4.13/bower_components/jquery/dist/jquery.min.js"></script>
+    
     
     <!-- DataTables -->
     <script src="~/Theme/AdminLTE-2.4.13/bower_components/datatables.net/js/jquery.dataTables.min.js"></script>
     <script src="~/Theme/AdminLTE-2.4.13/bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
-    <!-- SlimScroll -->
-    <script src="~/Theme/AdminLTE-2.4.13/bower_components/jquery-slimscroll/jquery.slimscroll.min.js"></script>
-    <!-- FastClick -->
-    <script src="~/Theme/AdminLTE-2.4.13/bower_components/fastclick/lib/fastclick.js"></script>
-    
+  
     
     <!-- page script -->
     <script>
@@ -649,5 +644,12 @@
     </script>
     <!-- THINKS TO ADD -->
 
+    <script>  
+        window.setTimeout(function () {
+            $("#msg").fadeTo(500, 0).slideUp(500, function () {
+                $(this).remove();
+            });
+        }, 4000);
+    </script>
 </body>
 </html>
