@@ -1,57 +1,106 @@
 ﻿@model IEnumerable<SMS2.Models.StudentResult>
-
 @{
     ViewBag.Title = "viewResultInside";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+<!-- Bootstrap 3.3.7 -->
+<link rel="stylesheet" href="~/Theme/AdminLTE-2.4.13/bower_components/bootstrap/dist/css/bootstrap.min.css">
+<!-- Font Awesome -->
+<link rel="stylesheet" href="~/Theme/AdminLTE-2.4.13/bower_components/font-awesome/css/font-awesome.min.css">
+<!-- Ionicons -->
+<link rel="stylesheet" href="~/Theme/AdminLTE-2.4.13/bower_components/Ionicons/css/ionicons.min.css">
+<!-- DataTables -->
+<link rel="stylesheet" href="~/Theme/AdminLTE-2.4.13/bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css">
 
-<h2>@ViewBag.subj_name</h2>
+<!-- Theme style -->
+<link rel="stylesheet" href="~/Theme/AdminLTE-2.4.13/dist/css/AdminLTE.min.css">
+<!-- AdminLTE Skins. Choose a skin from the css/skins
+     folder instead of downloading all of them to reduce the load. -->
+<link rel="stylesheet" href="~/Theme/AdminLTE-2.4.13/dist/css/skins/_all-skins.min.css">
+<!-- Content Wrapper. Contains page content -->
+<div class="box box-primary">
+    <div class="box-header with-border" style="padding-bottom:0px;">
+        <div class="jumbotron" style="padding-bottom:0px;padding-top:0px; background-color:white;">
+            <center>
+                <h2 style="font-family:Arial;font-size:35px;font-weight:bold;">View Result</h2>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
+                <p style="font-family:Arial;font-size:25px;">
+                    @Model.ElementAt(0).Subject.sub_Name
+                <p>
+            </center>
+        </div>
+    </div>
 
-<table class="table">
-    <tr>
-        
-        <th>
-            Student Name
-        </th>
-        
-        <th>
-            Result Type
-        </th>
-        <th>
-            Maximum Marks
-        </th>
-        <th>
-            Obtained Marks
-        </th>
-        <th></th>
-    </tr>
+    <!-- /.box-header -->
+    <div class="box-body">
+        <table id="example1" class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th>Student Name</th>
+                    <th>Result Type</th>
+                    <th>Maximum Marks</th>
+                    <th>Obtained Marks</th>
+                    <th>Progress</th>
+                    <th>Percentage</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
 
-@foreach (var item in Model) {
-    <tr>
-        
-        <td>
-            @Html.DisplayFor(modelItem => item.Student.st_Name)
-        </td>
-        
-        <td>
-            @Html.DisplayFor(modelItem => item.str_Type)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.str_MaxMarks)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.str_MarksObt)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.str_ID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.str_ID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.str_ID })
-        </td>
-    </tr>
-}
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Student.st_Name)
+                        </td>
 
-</table>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.str_Type)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.str_MaxMarks)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.str_MarksObt)
+                        </td>
+                        @{ string progress = null;
+                            double? i = Math.Round((double)((double)item.str_MarksObt / (double)item.str_MaxMarks) * 100, 2);
+                            if (i >= 75)
+                            {
+                                progress = null;
+                                progress = "success";
+                            }
+                            else if (i >= 60 && i < 75)
+                            {
+                                progress = null; progress = "info";
+                            }
+                            else if (i >= 35 && i < 60)
+                            {
+                                progress = null; progress = "warning";
+                            }
+                            else
+                            {
+                                progress = null; progress = "danger";
+                            }
+                        }
+                        <td>
+                            <div class="progress progress-xs progress-striped active">
+                                <div class="progress-bar progress-bar-@progress" style="width: @(i+"%")"></div>
+                            </div>
+
+                        </td>
+
+                        <td>
+                            @i.Value
+
+                        </td>
+
+
+                    </tr>
+
+                }
+
+            </tbody>
+        </table>
+    </div>
+    <!-- /.box-body -->
+</div>  <!-- /.box -->

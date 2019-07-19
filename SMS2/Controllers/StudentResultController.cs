@@ -48,6 +48,7 @@ namespace SMS2.Controllers
             int? classID = (from a in sms.Subjects where a.sub_ID == subj_id select a.cl_ID).First();
 
             Session["classID"] = classID;
+            ViewBag.subjectName = (from a in sms.Subjects where a.sub_ID == subj_id select a.sub_Name).First();
 
             StudentStudentResultViewModel viewModel = new StudentStudentResultViewModel();
 
