@@ -11,6 +11,14 @@ namespace SMS2.Controllers
         // GET: TimeTable
         public ActionResult Index()
         {
+            ViewBag.dashboardClass = "";
+            ViewBag.studentResultsClass = "treeview";
+            ViewBag.viewResultClass = "";
+            ViewBag.addResultClass = "";
+            ViewBag.attendenceClass = "treeview";
+            ViewBag.markAttendenceClass = "";
+            ViewBag.viewAttendenceClass = "";
+            ViewBag.timetableClass = "active";
             return View();
         }
     }

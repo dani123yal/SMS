@@ -2,9 +2,7 @@
 @{
     Layout = null;
 }
-
 <!DOCTYPE html>
-
 <html>
 <head>
     <meta charset="utf-8">
@@ -31,72 +29,45 @@
     <!-- Google Font -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
 </head>
-<body class="hold-transition login-page">
-    <div class="login-box">
-        <div class="login-logo">
-            <b>School Management System</b>
-        </div>
+<body class="hold-transition login-page" style="background-image:url(/images/background2.jpg);background-size:cover;background-position:center;background-repeat:no-repeat;">
+
+
+    <div class="login-box" style="margin-top:135px">
         <!-- /.login-logo -->
-        <div class="login-box-body">
-            <p class="login-box-msg">Sign in to start your session</p>
+        <div class="login-box-body" style="
+	  background-color: rgba(255,255,255,0.15); /* Black w/opacity/see-through */
+
+    box-shadow: 0px 5px 40px 5px rgba(0,0,0,0.7);
+        border:1px thin black;
+        border-radius:5px 5px;
+    color:white;
+	  z-index:9999;
+	  text-align: center;">
+
+            <b style="font-size:36px;color:dodgerblue;">Note</b><label style="font-size:36px;font-weight:500;margin-bottom:30px">Book</label>
             @using (Html.BeginForm("Login", "Account", FormMethod.Post))
             {
                 @Html.AntiForgeryToken()
                 <div class="form-group has-feedback">
-                    <input type="email" class="form-control" name="UserName" placeholder="Email" />
-                    <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+                    <input style="background-color:transparent;height:35px;width:100%;color:white;border:2px solid white;border-radius:10px 10px;color:white;text-align:center;font-size:18px;margin-top:10px;margin-bottom:10px;" type="email" name="UserName" placeholder="Email">
                 </div>
                 <div class="form-group has-feedback">
-                    <input type="password" class="form-control" name="Password" placeholder="Password" />
-                    <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+                    <input type="password" class="form-control" name="Password" style="background-color:transparent;height:35px;width:100%;color:white;border:2px solid white;border-radius:10px 10px;color:white;text-align:center;font-size:18px;margin-top:20px;margin-bottom:30px;" placeholder="Password" />
                 </div>
-                <div class="form-group">
+                
 
-
-                    <select class="form-control">
-
-                        <option>
-                            <b>--</b> Faculty
-                        </option>
-                        <option>
-                            <b>--</b> Student
-                        </option>
-                        <option>
-                            <b>--</b> Admin
-                        </option>
-
-                    </select>
-                </div>
-                <div class="row">
-                    <div class="col-xs-8">
-                        <div class="checkbox icheck">
-                            <label>
-                                <input type="checkbox"/>
-                                Remember Me
-                            </label>
-                        </div>
-                    </div>
-                    <!-- /.col -->
-                    <div class="col-xs-4">
-                        <button type="submit" class="btn btn-primary btn-block btn-flat">Sign In</button>
-                    </div>
-                    <!-- /.col -->
-                </div>
+                <label style="float:left;margin-bottom:10px;color:white;font-size:16px;margin-top :0;margin-bottom:20px;">
+                    <input type="checkbox" style="padding-right:15px;"><label style="margin-left:10px">Remember Me</label>
+                </label>
+                <!-- /.col -->
+                <button type="submit" style="height:40px;width:100%;color:white;border-radius:10px 10px;color:white;text-align:center;font-size:18px;margin-top:30px;margin-bottom:30px;    " class="btn btn-primary btn-block btn-flat">LOGIN   </button>
             }
-            <div class="social-auth-links text-center">
-                <p>- OR -</p>
-                <a href="#" class="btn btn-block btn-social btn-facebook btn-flat">
-                    <i class="fa fa-facebook"></i> Sign in using
-                    Facebook
-                </a>
-                <a href="#" class="btn btn-block btn-social btn-google btn-flat">
-                    <i class="fa fa-google-plus"></i> Sign in using
-                    Google+
-                </a>
-            </div>
+
+
             <!-- /.social-auth-links -->
-            <a href="#">I forgot my password</a><br>
-            <a href="register.html" class="text-center">Register a new membership</a>
+
+            <a href="register.html" style="float:left;color:white;font-size:16px;" class="text-center">Register</a>
+            <a href="#" style="color:white;float:right;font-size:16px;">Forget your Password?</a><br>
         </div>
         <!-- /.login-box-body -->
     </div>
@@ -108,12 +79,13 @@
     <!-- iCheck -->
     <script src="~/Theme/AdminLTE-2.4.13/plugins/iCheck/icheck.min.js"></script>
     <script>
-$(function () {
-    $('input').iCheck({
-      checkboxClass: 'icheckbox_square-blue',
-      radioClass: 'iradio_square-blue',
-      increaseArea: '20%' /* optional */
-    });
-  });</script>
+        $(function () {
+            $('input').iCheck({
+                checkboxClass: 'icheckbox_square-blue',
+                radioClass: 'iradio_square-blue',
+                increaseArea: '20%' /* optional */
+            });
+        });</script>
+
 </body>
 </html>
