@@ -39,6 +39,8 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
 </head>
 <body class="hold-transition skin-blue sidebar-mini">
+    <!-- jQuery 3 -->
+    <script src="~/Theme/AdminLTE-2.4.13/bower_components/jquery/dist/jquery.min.js"></script>
     <div class="wrapper">
         <header class="main-header">
             <!-- Logo -->
@@ -294,7 +296,7 @@
                                         <a href="#" class="btn btn-default btn-flat">Profile</a>
                                     </div>
                                     <div class="pull-right">
-                                        <a href="#" class="btn btn-default btn-flat">Sign out</a>
+                                        <a href="/account/login" class="btn btn-default btn-flat">Sign out</a>
                                     </div>
                                 </li>
                             </ul>
@@ -400,6 +402,8 @@
                         </div>
                     }
                 }
+
+
                 @RenderBody()
             </section>
         </div>
@@ -582,8 +586,6 @@
         <div class="control-sidebar-bg"></div>
     </div>
     <!-- ./wrapper -->
-    <!-- jQuery 3 -->
-    <script src="~/Theme/AdminLTE-2.4.13/bower_components/jquery/dist/jquery.min.js"></script>
     <!-- jQuery UI 1.11.4 -->
     <script src="~/Theme/AdminLTE-2.4.13/bower_components/jquery-ui/jquery-ui.min.js"></script>
     <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
@@ -621,13 +623,11 @@
     <script src="~/Theme/AdminLTE-2.4.13/dist/js/demo.js"></script>
 
     <!-- THINKS TO ADD -->
-    
-    
     <!-- DataTables -->
     <script src="~/Theme/AdminLTE-2.4.13/bower_components/datatables.net/js/jquery.dataTables.min.js"></script>
     <script src="~/Theme/AdminLTE-2.4.13/bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
-  
-    
+
+
     <!-- page script -->
     <script>
         $(function () {
@@ -644,7 +644,8 @@
     </script>
     <!-- THINKS TO ADD -->
 
-    <script>  
+    <script>
+
         window.setTimeout(function () {
             $("#msg").fadeTo(500, 0).slideUp(500, function () {
                 $(this).remove();
