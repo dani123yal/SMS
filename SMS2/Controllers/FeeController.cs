@@ -11,6 +11,8 @@ namespace SMS2.Controllers
         // GET: Fee
         public ActionResult Index()
         {
+
+            ViewBag.feeClass = "active";
             return View();
         }
 

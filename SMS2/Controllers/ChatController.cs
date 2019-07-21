@@ -11,6 +11,11 @@ namespace SMS2.Controllers
         // GET: Chat
         public ActionResult Index()
         {
+
+           ViewBag.studentResultsClass = "treeview";
+            ViewBag.attendenceClass =  "treeview";
+            ViewBag.markAttendenceClass = "";
+            ViewBag.commentClass = "active"; 
             return View();
         }
 
@@ -18,6 +23,10 @@ namespace SMS2.Controllers
         [HttpGet]
         public ActionResult Create(int id)
         {
+            ViewBag.studentResultsClass = "treeview";
+            ViewBag.attendenceClass = "treeview";
+            ViewBag.markAttendenceClass = "";
+            ViewBag.commentClass = "active";
             return View();
         }
 
@@ -26,6 +35,7 @@ namespace SMS2.Controllers
         [HttpGet]
         public ActionResult ParentIndex()
         {
+            ViewBag.commentClass = "active";
             return View();
         }
     }

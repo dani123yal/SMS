@@ -376,6 +376,27 @@
                         </a>
                     </li>
 
+                    @if (WebSecurity.CurrentUserId == 13)
+                    {
+
+                    <li class="@ViewBag.feeClass">
+                        <a href="/fee/index">
+                            <i class="fa  fa-money"></i> <span>Fee Management</span>
+                            <span class="pull-right-container">
+
+                            </span>
+                        </a>
+                    </li>
+
+                    <li class="@ViewBag.commentClass">
+                        <a href="/chat/parentindex">
+                            <i class="fa  fa-commenting-o"></i> <span>Comments</span>
+                            <span class="pull-right-container">
+
+                            </span>
+                        </a>
+                    </li>
+                    }
 
 
 
