@@ -36,7 +36,7 @@
                             <b>Class</b>
                         </div>
                         @Html.HiddenFor(item => item.classId)
-                        
+
                         <input class="form-control text-center" type="text" value="@ViewBag.classID" name="classId" readonly="readonly" />
                     </div>
                 </div>
@@ -67,7 +67,16 @@
                                     @Html.HiddenFor(item => item.attendanceList[i].studentList.st_ID)
                                     <td style="padding-left:25px;">@Html.DisplayFor(item => item.attendanceList[i].studentList.st_ID)</td>
                                     <td style="padding-left:32px;">
-                                        @Html.CheckBoxFor(item => item.attendanceList[i].attStatus)
+                                        @*@Html.CheckBoxFor(item => item.attendanceList[i].attStatus)*@
+                                        <div class="form-group">
+                                            <label class="">
+                                                
+                                                    @*<input type="checkbox" class="flat-red" style="position: absolute; opacity: 0;">*@
+                                                    @Html.CheckBoxFor(item => item.attendanceList[i].attStatus, new { @class = "flat-red", @style="position:absolute;opacity:0;" })
+                                                    @*<ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgba(255, 255, 255, 255); border: 0px; opacity: 0;"></ins>*@
+                                                
+                                            </label>
+                                        </div>
                                 </tr>
                             }
                         </tbody>
@@ -89,4 +98,5 @@
             </div>
         </div>
     </div>
+
 }

@@ -18,6 +18,8 @@
     <link rel="stylesheet" href="~/Theme/AdminLTE-2.4.13/dist/css/AdminLTE.min.css">
     <!-- AdminLTE Skins. Choose a skin from the css/skins
          folder instead of downloading all of them to reduce the load. -->
+    <link rel="stylesheet" href="~/Theme/AdminLTE-2.4.13/plugins/iCheck/all.css">
+
     <link rel="stylesheet" href="~/Theme/AdminLTE-2.4.13/dist/css/skins/_all-skins.min.css">
     <!-- Morris chart -->
     <link rel="stylesheet" href="~/Theme/AdminLTE-2.4.13/bower_components/morris.js/morris.css">
@@ -623,6 +625,9 @@
     <script src="~/Theme/AdminLTE-2.4.13/dist/js/demo.js"></script>
 
     <!-- THINKS TO ADD -->
+
+    <script src="~/Theme/AdminLTE-2.4.13/plugins/iCheck/icheck.min.js"></script>
+
     <!-- DataTables -->
     <script src="~/Theme/AdminLTE-2.4.13/bower_components/datatables.net/js/jquery.dataTables.min.js"></script>
     <script src="~/Theme/AdminLTE-2.4.13/bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
@@ -645,12 +650,33 @@
     <!-- THINKS TO ADD -->
 
     <script>
-
         window.setTimeout(function () {
             $("#msg").fadeTo(500, 0).slideUp(500, function () {
                 $(this).remove();
             });
         }, 4000);
+    </script>
+
+    <script>
+        $(function () {
+
+
+            //iCheck for checkbox and radio inputs
+            $('input[type="checkbox"].minimal, input[type="radio"].minimal').iCheck({
+                checkboxClass: 'icheckbox_minimal-blue',
+                radioClass: 'iradio_minimal-blue'
+            })
+            //Red color scheme for iCheck
+            $('input[type="checkbox"].minimal-red, input[type="radio"].minimal-red').iCheck({
+                checkboxClass: 'icheckbox_minimal-red',
+                radioClass: 'iradio_minimal-red'
+            })
+            //Flat red color scheme for iCheck
+            $('input[type="checkbox"].flat-red, input[type="radio"].flat-red').iCheck({
+                checkboxClass: 'icheckbox_flat-green',
+                radioClass: 'iradio_flat-green'
+            })
+        })
     </script>
 </body>
 </html>
