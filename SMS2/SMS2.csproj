@@ -164,6 +164,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AttendanceController.cs" />
     <Compile Include="Controllers\AttendanceForStudentController.cs" />
+    <Compile Include="Controllers\FeeController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\StudentResultController.cs" />
     <Compile Include="Controllers\StudentResultStudentController.cs" />
@@ -7384,6 +7385,8 @@
     <Content Include="Views\TimeTable\Index.cshtml" />
     <Content Include="Views\AttendanceForStudent\Index.cshtml" />
     <Content Include="Views\AttendanceForStudent\viewStudentAttendance.cshtml" />
+    <Content Include="Views\Fee\printInvoice.cshtml" />
+    <Content Include="Views\Fee\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
