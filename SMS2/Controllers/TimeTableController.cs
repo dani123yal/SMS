@@ -15,7 +15,7 @@ namespace SMS2.Controllers
             ViewBag.studentResultsClass = "treeview";
             ViewBag.viewResultClass = "";
             ViewBag.addResultClass = "";
-            ViewBag.attendenceClass = "treeview";
+            ViewBag.attendenceClass = "";
             ViewBag.markAttendenceClass = "";
             ViewBag.viewAttendenceClass = "";
             ViewBag.timetableClass = "active";

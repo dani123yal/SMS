@@ -24,89 +24,87 @@
             <center>
                 <h2 style="font-family:Arial;font-size:35px;font-weight:bold;">View Result</h2>
 
-
-
                 @try
                 {
                     <p style="font-family:Arial;font-size:25px;">
                         @Model.ElementAt(0).Subject.sub_Name
                     </p>
-                        }
-                        catch
-                        {
+                }
+                catch
+                {
 
-                        }
-
-
-                </center>
+                }
+            </center>
         </div>
     </div>
 
     <!-- /.box-header -->
     <div class="box-body">
-        <table id="example1" class="table table-bordered table-striped">
-            <thead>
-                <tr>
-                    <th>Result Type</th>
-                    <th>Maximum Marks</th>
-                    <th>Obtained Marks</th>
-                    <th>Progress</th>
-                    <th>Percentage</th>
-                </tr>
-            </thead>
-            <tbody>
-                @foreach (var item in Model)
-                {
+        <div class="table-responsive">
+            <table id="example1" class="table table-bordered table-striped">
+                <thead>
                     <tr>
-
-                        <td>
-                            @Html.DisplayFor(modelItem => item.str_Type)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.str_MaxMarks)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.str_MarksObt)
-                        </td>
-                        @{ string progress = null;
-                            double? i = Math.Round((double)((double)item.str_MarksObt / (double)item.str_MaxMarks) * 100, 2);
-                            if (i >= 75)
-                            {
-                                progress = null;
-                                progress = "success";
-                            }
-                            else if (i >= 60 && i < 75)
-                            {
-                                progress = null; progress = "info";
-                            }
-                            else if (i >= 35 && i < 60)
-                            {
-                                progress = null; progress = "warning";
-                            }
-                            else
-                            {
-                                progress = null; progress = "danger";
-                            }
-                        }
-                        <td>
-                            <div class="progress progress-xs progress-striped active">
-                                <div class="progress-bar progress-bar-@progress" style="width: @(i+"%")"></div>
-                            </div>
-
-                        </td>
-
-                        <td>
-                            @i.Value
-
-                        </td>
-
-
+                        <th>Result Type</th>
+                        <th>Maximum Marks</th>
+                        <th>Obtained Marks</th>
+                        <th>Progress</th>
+                        <th>Percentage</th>
                     </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
 
-                }
+                            <td>
+                                @Html.DisplayFor(modelItem => item.str_Type)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.str_MaxMarks)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.str_MarksObt)
+                            </td>
+                            @{ string progress = null;
+                                double? i = Math.Round((double)((double)item.str_MarksObt / (double)item.str_MaxMarks) * 100, 2);
+                                if (i >= 75)
+                                {
+                                    progress = null;
+                                    progress = "success";
+                                }
+                                else if (i >= 60 && i < 75)
+                                {
+                                    progress = null; progress = "info";
+                                }
+                                else if (i >= 35 && i < 60)
+                                {
+                                    progress = null; progress = "warning";
+                                }
+                                else
+                                {
+                                    progress = null; progress = "danger";
+                                }
+                            }
+                            <td>
+                                <div class="progress progress-xs progress-striped active">
+                                    <div class="progress-bar progress-bar-@progress" style="width: @(i+"%")"></div>
+                                </div>
 
-            </tbody>
-        </table>
+                            </td>
+
+                            <td>
+                                @i.Value
+
+                            </td>
+
+
+                        </tr>
+
+                    }
+
+                </tbody>
+            </table>
+        </div>
     </div>
     <!-- /.box-body -->
 </div>  <!-- /.box -->

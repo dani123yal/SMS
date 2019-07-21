@@ -15,7 +15,7 @@
                 <div class="jumbotron" style="padding-bottom:0px;padding-top:0px; background-color:white;">
                     <center>
                         <h2 style="font-family:Arial;font-size:35px;font-weight:bold;">Add Result</h2>
-                        <p style="font-family:Arial;font-size:25px;">@ViewBag.subjectName<p>
+                        <p style="font-family:Arial;font-size:25px;">@ViewBag.subjectName</p>
                     </center>
                 </div>
             </div>
@@ -28,7 +28,7 @@
                 <center>
                     <div class="col-md-2"></div>
 
-                    @Html.Label("Student Name", htmlAttributes: new { @class = "control-label col-md-2", @style = "margin-left:43px;" })
+                    @Html.Label("Student Name", htmlAttributes: new { @class = "control-label col-md-2", @style = "margin-left:4.5%;" })
 
 
                     <div class="col-md-3">
@@ -36,34 +36,29 @@
 
                         @Html.DropDownListFor(model => model.studentResultview.st_ID, new SelectList(Model.studentsview, "st_ID", "st_Name")
 
-, htmlAttributes: new { @class = "form-control", @style = "width:300px;text-align:center;" })
+, htmlAttributes: new { @class = "form-control", @style = "width:300px;text-align:center;max-width:100%;" })
                         @Html.ValidationMessageFor(model => model.studentResultview.st_ID, "", new { @class = "text-danger" })
                     </div>
                 </center>
             </div>
 
-
             <div class="form-group">
                 <center>
                     <div class="col-md-2"></div>
-                    @Html.Label("Result Type", htmlAttributes: new { @class = "control-label col-md-2", @style = "margin-left:43px;" })
+                    @Html.Label("Result Type", htmlAttributes: new { @class = "control-label col-md-2", @style = "margin-left:4.5%;" })
                     <div class="col-md-3">
-                        @Html.EditorFor(model => model.studentResultview.str_Type, new { htmlAttributes = new { @class = "form-control", @style = "width:300px;" } })
+                        @Html.EditorFor(model => model.studentResultview.str_Type, new { htmlAttributes = new { @class = "form-control", @style = "width:300px;max-width:100%;" } })
                         @Html.ValidationMessageFor(model => model.studentResultview.str_Type, "", new { @class = "text-danger" })
                     </div>
                 </center>
             </div>
 
-
-
-
-
             <div class="form-group">
                 <center>
                     <div class="col-md-2"></div>
-                    @Html.Label("Maximum Marks", htmlAttributes: new { @class = "control-label col-md-2", @style = "margin-left:43px;" })
+                    @Html.Label("Maximum Marks", htmlAttributes: new { @class = "control-label col-md-2", @style = "margin-left:4.5%;" })
                     <div class="col-md-3">
-                        @Html.EditorFor(model => model.studentResultview.str_MaxMarks, new { htmlAttributes = new { @class = "form-control", @style = "width:300px;" } })
+                        @Html.EditorFor(model => model.studentResultview.str_MaxMarks, new { htmlAttributes = new { @class = "form-control", @style = "width:300px;max-width:100%;" } })
                         @Html.ValidationMessageFor(model => model.studentResultview.str_MaxMarks, "", new { @class = "text-danger" })
                     </div>
                 </center>
@@ -72,9 +67,9 @@
             <div class="form-group">
                 <center>
                     <div class="col-md-2"></div>
-                    @Html.Label("Obtained Marks", htmlAttributes: new { @class = "control-label col-md-2", @style = "margin-left:43px;" })
+                    @Html.Label("Obtained Marks", htmlAttributes: new { @class = "control-label col-md-2", @style = "margin-left:4.5%;" })
                     <div class="col-md-3">
-                        @Html.EditorFor(model => model.studentResultview.str_MarksObt, new { htmlAttributes = new { @class = "form-control", @style = "width:300px;" } })
+                        @Html.EditorFor(model => model.studentResultview.str_MarksObt, new { htmlAttributes = new { @class = "form-control", @style = "width:300px;max-width:100%;" } })
                         @Html.ValidationMessageFor(model => model.studentResultview.str_MarksObt, "", new { @class = "text-danger" })
                     </div>
                 </center>
@@ -82,12 +77,16 @@
             </div>
 
 
+
+
+
+
             <div class="form-group">
                 <center>
                     <div class="col-md-2"></div>
-                    @Html.Label("Obtained Marks", htmlAttributes: new { @class = "control-label col-md-2", @style = "margin-left:43px;color:white;opacity:0;" })
+                    @Html.Label("Obtained Marks", htmlAttributes: new { @class = "control-label col-md-2", @style = "margin-left:4.5%;width:300;max-width:100%;color:white;opacity:0;" })
                     <div class="col-md-3">
-                        <input type="submit" class="btn btn-block btn-primary btn-sm" value="ADD" style="height:50px;width:300px;color:white;font-family:Arial;font-size:25px;margin-bottom:10px;" />
+                        <input type="submit" class="btn btn-block btn-primary btn-sm" value="ADD" style="height:50px;width:300px;color:white;font-family:Arial;font-size:25px;margin-bottom:10px;max-width:100%;" />
 
                     </div>
                 </center>
