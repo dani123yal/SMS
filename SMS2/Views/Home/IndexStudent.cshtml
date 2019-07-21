@@ -41,12 +41,12 @@
                 <!-- small box -->
                 <div class="small-box bg-aqua">
                     <div class="inner">
-                        <h3>150</h3>
-
-                        <p>New Expenses</p>
+                        <h3>2</h3>
+                        
+                        <p>Absences this week</p>
                     </div>
                     <div class="icon">
-                        <i class="ion ion-bag"></i>
+                        <i class="ion ion-pie-graph"></i>
                     </div>
                     <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
                 </div>
@@ -56,9 +56,9 @@
                 <!-- small box -->
                 <div class="small-box bg-green">
                     <div class="inner">
-                        <h3>53<sup style="font-size: 20px">%</sup></h3>
+                        <h3>82%</h3>
 
-                        <p>Progress Rate</p>
+                        <p>Result Rate</p>
                     </div>
                     <div class="icon">
                         <i class="ion ion-stats-bars"></i>
@@ -71,9 +71,9 @@
                 <!-- small box -->
                 <div class="small-box bg-yellow">
                     <div class="inner">
-                        <h3>44</h3>
+                        <h3>2</h3>
 
-                        <p>New Student Registrations</p>
+                        <p>New Activities</p>
                     </div>
                     <div class="icon">
                         <i class="ion ion-person-add"></i>
@@ -86,9 +86,9 @@
                 <!-- small box -->
                 <div class="small-box bg-red">
                     <div class="inner">
-                        <h3>65</h3>
+                        <h3>65%</h3>
 
-                        <p>CMS Hits</p>
+                        <p>Total Attendence</p>
                     </div>
                     <div class="icon">
                         <i class="ion ion-pie-graph"></i>
@@ -108,7 +108,7 @@
                     <ul class="nav nav-tabs pull-right">
                         <li class="active"><a href="#revenue-chart" data-toggle="tab">Area</a></li>
                         <li><a href="#sales-chart" data-toggle="tab">Donut</a></li>
-                        <li class="pull-left header"><i class="fa fa-inbox"></i> Students Record</li>
+                        <li class="pull-left header"><i class="fa fa-inbox"></i> Result Progress</li>
                     </ul>
                     <div class="tab-content no-padding">
                         <!-- Morris chart - Sales -->
@@ -174,7 +174,7 @@
                             <!-- /.col -->
                             <div class="col-sm-6">
                                 <div class="clearfix">
-                                    <span class="pull-left">Exam Checking</span>
+                                    <span class="pull-left">Montly Preparation</span>
                                     <small class="pull-right">40%</small>
                                 </div>
                                 <div class="progress xs">
@@ -182,7 +182,7 @@
                                 </div>
 
                                 <div class="clearfix">
-                                    <span class="pull-left">Maintenance issues resolved</span>
+                                    <span class="pull-left">Stage Presentation</span>
                                     <small class="pull-right">30%</small>
                                 </div>
                                 <div class="progress xs">
@@ -210,7 +210,7 @@
                 <!-- Map box -->
                 <!-- DONUT CHART --><div class="box box-danger">
                     <div class="box-header with-border">
-                        <h3 class="box-title">Monthly Expenses</h3>
+                        <h3 class="box-title">Result Division</h3>
 
                         <div class="box-tools pull-right">
                             <button type="button" class="btn btn-box-tool" data-widget="collapse">
@@ -231,8 +231,8 @@
                 <div class="box box-solid bg-teal-gradient">
                     <div class="box-header">
                         <i class="fa fa-th"></i>
-
-                        <h3 class="box-title">School Information</h3>
+                        
+                        <h3 class="box-title">Attendance Rate</h3>
 
                         <div class="box-tools pull-right">
                             <button type="button" class="btn bg-teal btn-sm" data-widget="collapse">
@@ -253,21 +253,21 @@
                                 <input type="text" class="knob" data-readonly="true" value="20" data-width="60" data-height="60"
                                        data-fgColor="#39CCCC">
 
-                                <div class="knob-label">Maintenance</div>
+                                <div class="knob-label">Q1</div>
                             </div>
                             <!-- ./col -->
                             <div class="col-xs-4 text-center" style="border-right: 1px solid #f4f4f4">
                                 <input type="text" class="knob" data-readonly="true" value="50" data-width="60" data-height="60"
                                        data-fgColor="#39CCCC">
 
-                                <div class="knob-label">Faculty Performance</div>
+                                <div class="knob-label">Q2</div>
                             </div>
                             <!-- ./col -->
                             <div class="col-xs-4 text-center">
                                 <input type="text" class="knob" data-readonly="true" value="30" data-width="60" data-height="60"
                                        data-fgColor="#39CCCC">
 
-                                <div class="knob-label">Feedback</div>
+                                <div class="knob-label">Q3</div>
                             </div>
                             <!-- ./col -->
                         </div>
@@ -307,40 +307,40 @@
         var pieChart = new Chart(pieChartCanvas)
         var PieData = [
             {
-                value: 700,
+                value: 50,
                 color: '#f56954',
                 highlight: '#f56954',
-                label: 'Chrome'
+                label: 'Maths'
             },
             {
-                value: 500,
+                value: 70,
                 color: '#00a65a',
                 highlight: '#00a65a',
-                label: 'IE'
+                label: 'Physics'
             },
             {
-                value: 400,
+                value: 20,
                 color: '#f39c12',
                 highlight: '#f39c12',
-                label: 'FireFox'
+                label: 'Urdu'
             },
             {
-                value: 600,
+                value: 70,
                 color: '#00c0ef',
                 highlight: '#00c0ef',
-                label: 'Safari'
+                label: 'Islamiat'
             },
             {
-                value: 300,
+                value: 50,
                 color: '#3c8dbc',
                 highlight: '#3c8dbc',
-                label: 'Opera'
+                label: 'Biology'
             },
             {
-                value: 100,
+                value: 60,
                 color: '#d2d6de',
                 highlight: '#d2d6de',
-                label: 'Navigator'
+                label: 'PST'
             }
         ]
         var pieOptions = {
