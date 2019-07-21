@@ -1,0 +1,134 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section Styles
+{
+    <style type="text/css">
+        .example-modal .modal {
+            position: relative;
+            top: auto;
+            bottom: auto;
+            right: auto;
+            left: auto;
+            display: block;
+            z-index: 1;
+        }
+
+        .example-modal .modal {
+            background: transparent !important;
+        }
+    </style>
+}
+
+
+<div class="row">
+    <div class="col-xs-12 text-center">
+        <div class="box box-default">
+            <div class="box-header with-border">
+                <h2 class="box-title">Chat Form</h2>
+            </div>
+            <div class="box-body">
+                <button type="button" class="btn btn-default btn-lg" data-toggle="modal" data-target="#modal-default">
+                    Select Class
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="box box-danger">
+    <div class="box-header with-border">
+        <h2> &nbsp;&nbsp;Mark Attendance</h2>
+    </div>
+    <div class="box-body">
+        <div class="row" style="width:104%;">
+            <div class="col-md-1"></div>
+            <div class="col-md-5">
+                <div class="input-group">
+                    <div class="input-group-addon">
+                        <i class="fa fa-calendar"></i>&nbsp;
+                        <b>Date&nbsp;&nbsp;</b>
+                    </div>
+                    <input class="form-control text-center" type="text" value="@DateTime.Now.ToShortDateString()" name="date" readonly="readonly" />
+                </div>
+            </div>
+            <div class="col-md-5">
+                <div class="input-group">
+                    <div class="input-group-addon">
+                        <b>Class</b>
+                    </div>
+
+                    <input class="form-control text-center" type="text" value="7" name="classId" readonly="readonly" />
+                </div>
+            </div>
+        </div>
+        <div class="row" style="width:102%; padding-left:10px;">
+            <hr />
+        </div>
+
+        <div class="row" style="width:104%;">
+            <div class="col-md-12">
+
+                <table class="table table-condensed">
+                    <thead>
+                        <tr>
+                            <th style="padding-left:10px; width:50px;">#</th>
+                            <th>Student Name</th>
+                            <th>Father Name</th>
+                            <th>Student ID</th>
+                            <th>Class</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>Afnan Jawaid</td>
+                            <td>Jawaid Akhter</td>
+                            <td>6</td>
+                            <td>7</td>
+                            <td>
+                                @Html.ActionLink("Send Message", "Create", "Chat", new { id=1 }, new { @class = "btn btn-primary" })
+
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        
+    </div>
+</div>
+
+<div class="modal fade" id="modal-default">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <h4 class="modal-title">Select class from the options</h4>
+            </div>
+            <div class="modal-body">
+                <select class="form-control">
+                    <option value="1">1-A</option>
+                    <option value="1">2-A</option>
+                    <option value="1">6-A</option>
+                    <option value="1">7-A</option>
+                </select>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" data-dismiss="modal">Save</button>
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>
+<!-- /.modal -->
