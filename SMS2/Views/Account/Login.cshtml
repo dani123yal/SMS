@@ -48,25 +48,26 @@
             {
                 @Html.AntiForgeryToken()
                 <div class="form-group has-feedback">
-                    <input style="background-color:transparent;height:35px;width:100%;color:white;border:2px solid white;border-radius:10px 10px;color:white;text-align:center;font-size:18px;margin-top:10px;margin-bottom:10px;" type="email" name="UserName" placeholder="Email">
+                    <input style="background-color:transparent;height:35px;width:90%;color:white;border:2px solid white;border-radius:10px 10px;color:white;text-align:center;font-size:18px;margin-top:10px;margin-bottom:0px;" type="email" name="UserName" placeholder="Email">
                 </div>
                 <div class="form-group has-feedback">
-                    <input type="password" class="form-control" name="Password" style="background-color:transparent;height:35px;width:100%;color:white;border:2px solid white;border-radius:10px 10px;color:white;text-align:center;font-size:18px;margin-top:20px;margin-bottom:30px;" placeholder="Password" />
+                    <input type="password" name="Password" style="background-color:transparent;height:35px;width:90%;color:white;border:2px solid white;border-radius:10px 10px;color:white;text-align:center;font-size:18px;margin-top:5px;margin-bottom:5px;" placeholder="Password" />
                 </div>
 
 
-                <label style="float:left;margin-bottom:10px;color:white;font-size:16px;margin-top :0;margin-bottom:20px;">
-                    <input type="checkbox" style="padding-right:15px;"><label style="margin-left:10px">Remember Me</label>
-                </label>
+
                 <!-- /.col -->
                 <button type="submit" style="height:40px;width:100%;color:white;border-radius:10px 10px;color:white;text-align:center;font-size:18px;margin-top:30px;margin-bottom:30px;    " class="btn btn-primary btn-block btn-flat">LOGIN   </button>
             }
+            <div style="background-color:rgba(0, 0, 0, 0.4);">
+                <div style="color:white">(Teacher) ID: daniyal.safdar9@gmail.com</div>
+                <div style="color:white">(Student) ID: afnanjaved@gmail.com<span style="user-select: none;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></div>
+                <div style="color:white">(Parent) &nbsp;ID: huzaifaishtiaq@gmail.com</div>
+                <div style="color:white">Password: 123456 (Same for all)</div>
+                <!-- /.social-auth-links -->
+            </div>
 
 
-            <!-- /.social-auth-links -->
-
-            <a href="register.html" style="float:left;color:white;font-size:16px;" class="text-center">Register</a>
-            <a href="#" style="color:white;float:right;font-size:16px;">Forget your Password?</a><br>
         </div>
         <!-- /.login-box-body -->
     </div>
