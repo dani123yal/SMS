@@ -47,7 +47,7 @@
                     <div class="col-md-2"></div>
                     @Html.Label("Result Type", htmlAttributes: new { @class = "control-label col-md-2", @style = "margin-left:4.5%;" })
                     <div class="col-md-3">
-                        @Html.EditorFor(model => model.studentResultview.str_Type, new { htmlAttributes = new { @class = "form-control", @style = "width:300px;max-width:100%;" } })
+                        @Html.EditorFor(model => model.studentResultview.str_Type, new { htmlAttributes = new { @class = "form-control", @style = "width:300px;max-width:100%;",@required = "required" } })
                         @Html.ValidationMessageFor(model => model.studentResultview.str_Type, "", new { @class = "text-danger" })
                     </div>
                 </center>
@@ -58,7 +58,7 @@
                     <div class="col-md-2"></div>
                     @Html.Label("Maximum Marks", htmlAttributes: new { @class = "control-label col-md-2", @style = "margin-left:4.5%;" })
                     <div class="col-md-3">
-                        @Html.EditorFor(model => model.studentResultview.str_MaxMarks, new { htmlAttributes = new { @class = "form-control", @style = "width:300px;max-width:100%;" } })
+                        @Html.EditorFor(model => model.studentResultview.str_MaxMarks, new { htmlAttributes = new { @class = "form-control", @style = "width:300px;max-width:100%;", @required = "required" } })
                         @Html.ValidationMessageFor(model => model.studentResultview.str_MaxMarks, "", new { @class = "text-danger" })
                     </div>
                 </center>
@@ -69,7 +69,7 @@
                     <div class="col-md-2"></div>
                     @Html.Label("Obtained Marks", htmlAttributes: new { @class = "control-label col-md-2", @style = "margin-left:4.5%;" })
                     <div class="col-md-3">
-                        @Html.EditorFor(model => model.studentResultview.str_MarksObt, new { htmlAttributes = new { @class = "form-control", @style = "width:300px;max-width:100%;" } })
+                        @Html.EditorFor(model => model.studentResultview.str_MarksObt, new { htmlAttributes = new { @class = "form-control", @style = "width:300px;max-width:100%;" , @required = "required" } })
                         @Html.ValidationMessageFor(model => model.studentResultview.str_MarksObt, "", new { @class = "text-danger" })
                     </div>
                 </center>

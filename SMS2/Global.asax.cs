@@ -26,7 +26,7 @@ namespace SMS2
         {
             if (!WebSecurity.Initialized)
             {
-                WebSecurity.InitializeDatabaseConnection("SMS2", "Users", "UserId", "UserName", true);
+                WebSecurity.InitializeDatabaseConnection("SMS", "Users", "UserId", "UserName", true);
 
 
 
