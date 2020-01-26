@@ -99,6 +99,7 @@ namespace SMS2.Controllers
 
             stModel.student = st;
             stModel.AttendanceList = attendanceList;
+            //stModel.AttendanceList.Reverse();
             return View(stModel);
         }
 
