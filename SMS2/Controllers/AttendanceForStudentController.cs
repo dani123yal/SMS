@@ -18,6 +18,19 @@ namespace SMS2.Controllers
         // GET: AttendanceForStudent
         public ActionResult Index()
         {
+            if (!WebSecurity.IsAuthenticated)
+            {
+                return RedirectToAction("Login", "Account");
+            }
+            else
+            {
+                if (!Roles.GetRolesForUser(WebSecurity.CurrentUserName)[0].Equals("Student"))
+                {
+
+                    return RedirectToAction("Login", "Account");
+                }
+            }
+
             if (WebSecurity.CurrentUserId != 0)
             {
                 ViewBag.dashboardClass = "";
@@ -45,6 +58,20 @@ namespace SMS2.Controllers
         [HttpGet]
         public ActionResult viewStudentAttendance(int month)
         {
+            if (!WebSecurity.IsAuthenticated)
+            {
+                return RedirectToAction("Login", "Account");
+            }
+            else
+            {
+                if (!Roles.GetRolesForUser(WebSecurity.CurrentUserName)[0].Equals("Student"))
+                {
+
+                    return RedirectToAction("Login", "Account");
+                }
+            }
+
+
             ViewBag.dashboardClass = "";
             ViewBag.studentResultsClass = "treeview";
             ViewBag.viewResultClass = "";

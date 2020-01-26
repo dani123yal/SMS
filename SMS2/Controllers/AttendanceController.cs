@@ -27,6 +27,19 @@ namespace SMS2.Controllers
         [HttpGet]
         public ActionResult MarkAttendance()
         {
+            if (!WebSecurity.IsAuthenticated)
+            {
+                return RedirectToAction("Login", "Account");
+            }
+            else
+            {
+                if (!Roles.GetRolesForUser(WebSecurity.CurrentUserName)[0].Equals("Faculty"))
+                {
+
+                    return RedirectToAction("Login", "Account");
+                }
+            }
+
             if (WebSecurity.CurrentUserId != 0)
             {
                 ViewBag.dashboardClass = "";
@@ -157,6 +170,19 @@ namespace SMS2.Controllers
         [HttpGet]
         public ActionResult ViewAttendance()
         {
+            if (!WebSecurity.IsAuthenticated)
+            {
+                return RedirectToAction("Login", "Account");
+            }
+            else
+            {
+                if (!Roles.GetRolesForUser(WebSecurity.CurrentUserName)[0].Equals("Faculty"))
+                {
+
+                    return RedirectToAction("Login", "Account");
+                }
+            }
+
             ViewBag.dashboardClass = "";
             ViewBag.studentResultsClass = "treeview";
             ViewBag.viewResultClass = "";
@@ -205,6 +231,19 @@ namespace SMS2.Controllers
         [HttpGet]
         public ActionResult AttendanceDetails(int classId, DateTime date)
         {
+
+            if (!WebSecurity.IsAuthenticated)
+            {
+                return RedirectToAction("Login", "Account");
+            }
+            else
+            {
+                if (!Roles.GetRolesForUser(WebSecurity.CurrentUserName)[0].Equals("Faculty"))
+                {
+
+                    return RedirectToAction("Login", "Account");
+                }
+            }
 
             ViewBag.dashboardClass = "";
             ViewBag.studentResultsClass = "treeview";

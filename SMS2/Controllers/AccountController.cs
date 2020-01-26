@@ -43,7 +43,7 @@ namespace MvcMembershipApp.Controllers
 
             }
 
-
+            WebSecurity.Logout();
 
             return View();
 
@@ -56,7 +56,7 @@ namespace MvcMembershipApp.Controllers
         public ActionResult Login(FormCollection Form)
 
         {
-            WebSecurity.Logout();
+            
             bool Authenticated = WebSecurity.Login(Form["UserName"], Form["Password"], false);
 
             string username = Form["UserName"];

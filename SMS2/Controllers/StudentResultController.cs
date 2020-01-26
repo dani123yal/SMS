@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Security;
 using WebMatrix.WebData;
 
 namespace SMS2.Controllers
@@ -19,6 +20,19 @@ namespace SMS2.Controllers
         // GET: StudentResult
         public ActionResult AddResult()
         {
+            if (!WebSecurity.IsAuthenticated)
+            {
+                return RedirectToAction("Login", "Account");
+            }
+            else
+            {
+                if (!Roles.GetRolesForUser(WebSecurity.CurrentUserName)[0].Equals("Faculty"))
+                {
+
+                    return RedirectToAction("Login", "Account");
+                }
+            }
+
             ViewBag.dashboardClass = "";
             ViewBag.studentResultsClass = "active treeview";
             ViewBag.viewResultClass = "";
@@ -35,6 +49,20 @@ namespace SMS2.Controllers
         [HttpGet]
         public ActionResult addResultInside(int subj_id)
         {
+
+            if (!WebSecurity.IsAuthenticated)
+            {
+                return RedirectToAction("Login", "Account");
+            }
+            else
+            {
+                if (!Roles.GetRolesForUser(WebSecurity.CurrentUserName)[0].Equals("Faculty"))
+                {
+
+                    return RedirectToAction("Login", "Account");
+                }
+            }
+
             ViewBag.attendenceClass = "treeview";
 
             Session["subj_id"] = subj_id;
@@ -76,6 +104,19 @@ namespace SMS2.Controllers
 
         public ActionResult viewResult()
         {
+            if (!WebSecurity.IsAuthenticated)
+            {
+                return RedirectToAction("Login", "Account");
+            }
+            else
+            {
+                if (!Roles.GetRolesForUser(WebSecurity.CurrentUserName)[0].Equals("Faculty"))
+                {
+
+                    return RedirectToAction("Login", "Account");
+                }
+            }
+
             ViewBag.dashboardClass = "";
             ViewBag.studentResultsClass = "active treeview";
             ViewBag.attendenceClass = "treeview";
@@ -93,6 +134,19 @@ namespace SMS2.Controllers
 
         public ActionResult viewResultInside(int subj_id)
         {
+            if (!WebSecurity.IsAuthenticated)
+            {
+                return RedirectToAction("Login", "Account");
+            }
+            else
+            {
+                if (!Roles.GetRolesForUser(WebSecurity.CurrentUserName)[0].Equals("Faculty"))
+                {
+
+                    return RedirectToAction("Login", "Account");
+                }
+            }
+
             ViewBag.dashboardClass = "";
             ViewBag.studentResultsClass = "active treeview";
             ViewBag.viewResultClass = "active";
